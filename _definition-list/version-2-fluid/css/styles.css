@@ -1,0 +1,42 @@
+	* {
+		margin:0; 
+		padding:0;
+	}
+
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		margin: 1em;
+	}
+	.menu-list {
+		padding: 10px; 
+		float: left;
+		width: 300px;
+		border: 2px solid #ccc;
+	}
+
+	.menu-list dl {
+		margin: 10px;
+		clear:both; 
+		float:left;
+		width: 280px;
+	}
+	.menu-list dt {
+		float:right;
+		width: 182px;
+		font-size: 1.0em; 
+		letter-spacing: 1px; 
+	}
+	.menu-list dd {
+		font-size: 0.8em;
+		line-height: 1.5; 
+	}
+
+	.menu-list img {
+		float:left;
+		margin: 0 8px 0 0;
+		padding:4px;
+		border:1px solid #d9e0e6;
+		border-bottom-color:#c8cdd2;
+		border-right-color:#c8cdd2;
+		background:#fff;
+	}
