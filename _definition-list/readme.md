@@ -3,13 +3,14 @@
 ## Homework
 
 1. Add a styled defiition list component to last week's homework.
-2. Attempt the first of the two exercises [here](https://github.com/foundations-fall-2016/session3-image-gallery).
 
 ## Definition Lists
 
 [Here is a summary](http://www.w3schools.com/html/html_lists.asp) of the different types of lists in HTML. And [an article](http://maxdesign.com.au/articles/definition/) specifically on definition lists.
 
-Examine the html in the browser. Note the use of `class="image"` on the `<dd>` elements containing image. 
+Examine the html in the browser. 
+
+<!-- Note the use of `class="image"` on the `<dd>` elements containing image.  -->
 
 Review the default browser formatting for definition lists using the developer tools.
 
@@ -25,6 +26,7 @@ Create a new `css` folder, create a new empty file within it and add the followi
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 1em;
+	font-size: 100%;
 }
 
 .menu-list {
@@ -50,7 +52,6 @@ Let's tackle the definition terms `<dt>`.
 
 ```css
 .menu-list dt {
-	font-size: 1.0em; 
 	letter-spacing: 1px; 
 	color: #627081; 
 }
@@ -62,7 +63,7 @@ Now apply some basic formatting to the definitions.
 .menu-list dd {
 	font-size: 0.875em;
 	line-height: 1.6; 
-    color: #666; 
+	color: #666; 
 }
 ```
 
@@ -95,7 +96,7 @@ Width of box (300px) minus margins around each dl (20px * 2) minus the width of 
 ```css
 .menu-list dt {
   ...
-	width: 180px;  
+	width: 180px;
 }
 ```
 
@@ -150,7 +151,7 @@ The layout breaks. The problem is with the `<dt>`'s widths.
 
 Change the spacing for the `<dt>`s by subtracting 18px. 
 
-180px minus 18  (8px right margin + 4px padding * 2 + 1px border * 2)
+180px minus 18 (8px right margin + 4px padding * 2 + 1px border * 2)
 
 ```css
 .menu-list dt {
@@ -171,47 +172,16 @@ Let's use a [sibling selector](https://css-tricks.com/child-and-sibling-selector
 }
 ```
 
-###The Alternating Design
+
+### Changing the float direction 
 
 In the final image the design intention was to alternate the image and text.
 
-Changing the float direction 
-
-Note `even` class on second dl element. 
-
-Reverse the float on the definition term
-
-```
-.menu-list .even dt {
-	float:left; 
-}
-```
-
-Reverse the margin on the `even` versions.
-```
-.menu-list .even dd + dd {
-	margin: 0 98px 0 0; 
-}
-```
-
-Reverse the float and margin on the image.
-
-```css
-.menu-list .even img {
-	float:right;
-	margin: 0 0 0 8px; 
-}
-```
-
-### Changing the float direction (alternate)
-
-We can use the CSS nth-child selector. This method allows us to target the html without adding classes for the sole purpose of controlling the view so it would be regarded as superior by many.
+We can use the CSS nth-child selector. This method allows us to target the html without adding classes for the sole purpose of controlling the view.
 
 The following selector would target the second `<dl>` element.
 
 `dl:nth-child(2)`
-
-After removing the `class=”even”` from the second dl tag
 
 ```
 .menu-list dl:nth-child(even) dt {
@@ -228,7 +198,7 @@ After removing the `class=”even”` from the second dl tag
 }
 ```
 
-For more information on nth-child read [this article](https://css-tricks.com/how-nth-child-works/) on Chris Coyer's CSS Tricks.
+For more information on nth-child read [this article](https://css-tricks.com/how-nth-child-works/) on CSS Tricks.
 
 ### Finishing Touches
 
@@ -245,82 +215,16 @@ Set the background image (304px wide plus a 2px border on both sides) and remove
 
 Add drop shadow to images
 
-`box-shadow: 1px 1px 3px #1a1a1a;`
+`box-shadow: 1px 1px 2px #aaa;`
 
 Or use rgb
 
-`box-shadow: 1px 1px 3px rgb(26, 26, 26);`
+`box-shadow: 1px 1px 3px rgb(200, 200, 200);`
 
 Or use rgba.
 
-`box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);`
+`box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);`
 
-## Alertnate Version
-
-To be complete, I've added a sample which uses an unordered list `unorderedlist-version.html`
-
-```
-<body>
-	<div class="menu-list">
-		<ul>
-			<li>Spicy Tuna Roll</li>
-			<li><img src="img/1.jpg" width="80" height="80" alt="Tuna Roll"></li>
-			<li>Our specialty - spicy tuna rolls.</li>
-		</ul>
-		<ul class="alt">
-			<li>Sushi for Two</li>
-			<li><img src="img/2.jpg" width="80" height="80" alt="Sushi for Two"></li>
-			<li>Enjoy a special treat for two. Orders also available for three or more.</li>
-		</ul>
-		<ul>
-			<li>Omikase</li>
-			<li><img src="img/3.jpg" width="80" height="80" alt="Omikase"></li>
-			<li>Allow our executive chef to prepare a special selection of the day's top choices.</li>
-		</ul>
-	</div>
-</body>
-```
-
-the CSS to make this work requires some additional complex selectors due to the lack of semantic richness (originally afforded by the Definition List)
-
-```css
-	.menu-list {
-		width:304px; 
-		background: url(img/bg.gif) no-repeat top left; 
-		padding:10px 0; 
-		float: left;
-	}
-	.menu-list ul {
-		list-style: none;
-		margin:10px 20px;
-		width: 260px;
-		float:left;
-		padding: 0;
-	}
-	.menu-list ul li:first-child {
-		float:right;
-		font-size:130%;
-		width: 180px;
-		width:162px;
-		font-size:1.0em; 
-		letter-spacing:1px; 
-		color:#627081; 
-	}
-	.menu-list ul li+li+li {
-		font-size:0.8em;
-		line-height:160%; 
-		color:#666; 
-	}
-	.menu-list li img {
-		float:left;
-		margin: 0 8px 0 0;
-		padding:4px;
-		border:1px solid #d9e0e6;
-		border-bottom-color:#c8cdd2;
-		border-right-color:#c8cdd2;
-		background:#fff;
-	}
-```
 
 
 ## Box Model - Border Box
