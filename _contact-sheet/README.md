@@ -247,7 +247,7 @@ A single slide [nth child](https://www.w3schools.com/cssref/sel_nth-child.asp)
 }
 ```
 
-Flex item grow: use sushi sample nav bar to view.
+Flex item grow: use sushi sample nav bar (single li) to view.
 
 `flex-grow: <number>; /* default 0 */`
 
@@ -264,7 +264,7 @@ Flex item align-self: increase height of nav to 5rem
 
 
 
-###Part Two - Catalog View
+## Part Two - Catalog View
 
 ![Sample image](Contact-sheet/2-catalog.jpg)
 
@@ -296,6 +296,8 @@ Then continue by adding:
 }
 ```
 
+Test the clear: left in the inspector.
+
 Portrait - align the image thumbnails:
 
 ```css
@@ -322,7 +324,7 @@ Add margins and padding to separate text and pic and remove bullets
 ```css
 .pic ul {
 	padding: 0;
-	margin-left:140px;
+	margin-left: 140px;
 	list-style: none;
 	border: 3px double #552;
 }
@@ -349,20 +351,20 @@ Format content:
 
 Slide items against each other.
 
-Establish a base height for the list items
-
-```css
-.pic li {
-	line-height: 1.2rem; 
-}
-```
-
 EDIT - Move catno over
 
 ```css
 .pic.catno {
   ...
-	margin-right: 4.5rem;  
+	margin-right: 4.5rem;
+}
+```
+
+Establish a base height for the list items
+
+```css
+.pic li {
+    line-height: 1.2rem; 
 }
 ```
 
@@ -371,7 +373,7 @@ EDIT - Slide price up
 ```css
 .pic .price {
   ... 
-	margin: -1.2rem 0 0 0;
+	margin: -1.2rem 0.5rem 0 0;
 }
 ```
 
@@ -410,6 +412,54 @@ Increase spacing between items
 .tn img {
   ...
 	margin-bottom: 1rem;
+}
+```
+
+### Part Two: Flex Version
+
+Remove floats, clears, and `/* margin-left:140px; */` from .pic ul:
+```
+.pic .tn {
+    /*float: left;*/
+ }
+```
+
+
+Add:
+
+```
+.wrap {
+    display: flex;
+    flex-direction: column; 
+}
+```
+
+```
+.pic {
+    display: flex;
+    margin: 10px;
+    /*clear: left;*/
+    width: 350px;
+}
+```
+
+```
+.pic ul {
+    padding: 0;
+    /*margin-left:140px;*/
+    list-style: none;
+    border: 3px double #552;
+    flex: 1;
+    margin: 0;
+    margin-left: 1rem;
+}
+```
+
+```
+.pic {
+    display: flex;
+    align-items: flex-start;
+    ...
 }
 ```
 
