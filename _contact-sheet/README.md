@@ -2,7 +2,7 @@
 
 
 ## Floating Image Gallery
-
+ 
 Goals:
 
 * keep as many images as possible above the fold
@@ -18,6 +18,12 @@ The following classes are used in the html:
 * tn - thumbnail link
 * title / catno / price (list item classes)
 
+Images are 128px by 96px (landscape) or 96px by 128px (portrait)
+
+Slide background images are 160px by 160px and are located in the css folder.
+
+The black area in the center of each slide image is the same as the image sizes.
+
 
 ### Part One - Contact Sheet
 
@@ -25,16 +31,20 @@ The following classes are used in the html:
 
 Create and new stles.css document in the styles directory and link it to start.html.
 
-Add Google font:
-
-```css
-@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
+```html
+<link rel="stylesheet" href="styles/styles.css" />
 ```
 
 Add and examine the normalize.css file
 
 ```html
 <link rel="stylesheet" href="styles/normalize.css" />
+```
+
+Add Google font:
+
+```css
+@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
 ```
 
 Add the base styles:
@@ -44,7 +54,7 @@ body {
 	background:#eed;
 	padding:1em;
 	font-family: 'Lato', sans-serif;
-	font-size: 62.5%; 
+	font-size: 100%; 
 }
 #footer {
 	padding-top: 3em;
@@ -56,7 +66,7 @@ Examine the footer font size, height and padding in the inspector. Look at compu
 
 The font size is 62.5% of 1em or 10px, the height is 12px and padding is 62.5% of 3em or 30px.
 
-Lesson: The box model uses font size to calculate padding. It creates a context where measurements are relative.
+Note: The box model uses font size to calculate padding. It creates a context where measurements are relative.
 
 
 Change the base font size to 100%. 
@@ -97,26 +107,24 @@ Note the clear property and the effect it has on the collapsed body. No floating
 ```css
 .pic {
   ...
-  margin: 5px 3px; 
+  margin: 20px 10px; 
 }
 ```
 
-We want all images to be centered vertically and horizontally within a square and so want the height and width to be the same. We do this by adding 16px to the top and bottom of .ls and to the left and right of .pt. (16 x 2 =36) (96 + 36 = 128)
+We want all images to be centered vertically and horizontally within a160 x 160px square (ref the slide images). 
+
+We do this by adding 16px to the top and bottom of .ls images and to the left and right of .pt images. (16 x 2 =36) (96 + 36 = 128)
 
 ```css
 .ls img { 
-  height:96px; 
-  width:128px;
   margin: 16px 0;
 }
 .pt img {
-  height:128px;
-  width:96px;
   margin:0 16px;
 }
 ```
 
-Examine the frame-ls and -pt images - they are 160px square
+The frame-ls and -pt images - are 160px square
 
 ![Sample image](Contact-sheet/styles/img/frame-ls.gif)
 ![Sample image](Contact-sheet/styles/img/frame-pt.gif)
@@ -147,9 +155,111 @@ Add a dimensional border to the images.
   border: 1px solid #444; 
   border-color: #444 #aaa #aaa #444;
  }
- ```
+```
 
 Remove the border from the pic divs.
+
+
+### Using Flexbox
+
+Remove the float from `.pic`
+
+Add a div with class wrap around all the pic divs.
+
+#### Flex container
+
+```
+.wrap {
+    display: flex;
+}
+```
+
+Flex wrap:
+
+` flex-wrap: nowrap | wrap | wrap-reverse;`
+
+```
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+```
+
+Flex direction
+
+`flex-direction: row | row-reverse | column | column-reverse;`
+
+```
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+```
+
+Flex flow (seldom used):
+
+`flex-flow: <‘flex-direction’> || <‘flex-wrap’>`
+
+
+Flex justify-content:
+
+`justify-content: flex-start | flex-end | center | space-between | space-around;`
+
+Flex align-items: like justify content but for the other axis.
+
+Add `height: 100vh;` to the wrap constiner.
+
+`align-items: flex-start | flex-end | center | baseline | stretch;`
+
+Flex align-content: note center setting in this context
+
+`align-content: flex-start | flex-end | center | space-between | space-around | stretch;`
+
+#### Flex children (.pic here)
+
+Flex item order: 
+
+`order: <integer>;`
+
+```
+.pt {
+    background-image: url(img/frame-pt.gif);
+    order: 2;
+}
+```
+
+A single slide [nth child](https://www.w3schools.com/cssref/sel_nth-child.asp)
+
+```
+.pic:nth-child(1){ 
+  order: 4
+}
+```
+
+```
+.pic:nth-child(odd){ 
+  order: 4
+}
+.pt {
+    background-image: url(img/frame-pt.gif);
+    /*order: 2;*/
+}
+```
+
+Flex item grow: use sushi sample nav bar to view.
+
+`flex-grow: <number>; /* default 0 */`
+
+Flex item flex: This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto.
+
+`flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
+
+Flex item align-self: increase height of nav to 5rem
+
+`align-self: auto | flex-start | flex-end | center | baseline | stretch;`
+
+
 
 
 
