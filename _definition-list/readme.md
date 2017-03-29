@@ -1,6 +1,11 @@
-#FOUNDATIONS session 3 
+# FOUNDATIONS session 3
 
-##Definition Lists
+## Homework
+
+1. Add a styled defiition list component to last week's homework.
+2. Attempt the first of the two exercises [here](https://github.com/foundations-fall-2016/session3-image-gallery).
+
+## Definition Lists
 
 [Here is a summary](http://www.w3schools.com/html/html_lists.asp) of the different types of lists in HTML. And [an article](http://maxdesign.com.au/articles/definition/) specifically on definition lists.
 
@@ -8,7 +13,7 @@ Examine the html in the browser. Note the use of `class="image"` on the `<dd>` e
 
 Review the default browser formatting for definition lists using the developer tools.
 
-##The CSS
+## The CSS
 Create a new `css` folder, create a new empty file within it and add the following CSS code.
 
 ```
@@ -198,7 +203,7 @@ Reverse the float and margin on the image.
 }
 ```
 
-###Changing the float direction (alternate)
+### Changing the float direction (alternate)
 
 We can use the CSS nth-child selector. This method allows us to target the html without adding classes for the sole purpose of controlling the view so it would be regarded as superior by many.
 
@@ -225,7 +230,7 @@ After removing the `class=”even”` from the second dl tag
 
 For more information on nth-child read [this article](https://css-tricks.com/how-nth-child-works/) on Chris Coyer's CSS Tricks.
 
-###Finishing Touches
+### Finishing Touches
 
 Set the background image (304px wide plus a 2px border on both sides) and remove the border.
 
@@ -250,7 +255,7 @@ Or use rgba.
 
 `box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);`
 
-##Alertnate Version
+## Alertnate Version
 
 To be complete, I've added a sample which uses an unordered list `unorderedlist-version.html`
 
@@ -318,7 +323,7 @@ the CSS to make this work requires some additional complex selectors due to the 
 ```
 
 
-##Box Model - Border Box
+## Box Model - Border Box
 
 Working with the alternate box model in version-2-fluid.
 
@@ -357,9 +362,9 @@ Remove the width rule from the menu-list and note its size. Add `width: 100%`.
 ```
 
 
-##Responsive Design - Just the Basics
+## Responsive Design - Just the Basics
 
-###Media Query
+### Media Query
 
 * print
 
@@ -390,7 +395,7 @@ Use the width of the browser to change the view.
 }
 ```
 
-###The meta tag
+### The meta tag
 
 Use Chrome's toggle device toolbar feature and choose a device.
 
@@ -400,7 +405,4 @@ Add the [viewport meta](http://www.w3schools.com/Css/css_rwd_viewport.asp) tag t
 
 `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 
-##Homework
 
-1. Add a styled defiition list component to last week's homework.
-2. Attempt the first of the two exercises [here](https://github.com/foundations-fall-2016/session3-image-gallery).

@@ -1,17 +1,14 @@
-# Front End Foundations Session Two
+# Front End Foundations Session Three
 
 ## Homework
 
-1. Continue the homework from last week - "Examine the provided homework samples for inspiration and try your hand at redesigning the page using the CSS techniques described in class"
-
-1. Review the steps we used to create a tab navigation interface
+1. 
 
 
 ## Reading 
 
-* CSS3 for Web Designers - finish it
-
-* [Responsive Web Design](https://abookapart.com/products/responsive-web-design) - start it, carefully read the section on Media Queries
+* [Responsive Web Design](https://abookapart.com/products/responsive-web-design) - finish it
+* [JavaScript for Web Designers](https://abookapart.com/products/javascript-for-web-designers) Chapter 1 -Getting Set Up, Chapter 2 - Understanding Data Types, Chapter 3 - Conditional Statements
 
 
 ## Server Accounts
@@ -21,11 +18,7 @@
 
 ## Sushi Review
 
-* review the CSS
-
-* create a separate css file and link it back to the document
-
-* reformat the anchor tags using display flex
+* the anchor tags use display flex
 
 ```
 .nav {
@@ -41,44 +34,13 @@
 ```
 
 
-## DOM Scripting I
-
-* The console and `console.log()`
+## DOM Scripting - review
 
 * Selecting items with `document.querySelector`
 
 * attaching events with `addEventListener()`
 
-* Functions
-
 * Manipulating HTML with `classList`
-
-Add link to map:
-
-```
-https://www.google.com/maps/place/Geido/@40.6778979,-73.9749227,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25ba8edab126b:0xfaa0551477e2ec72!8m2!3d40.6778939!4d-73.972734
-```
-
-Add a class of `.map` to the map link
-
-```
-<script>
-	var mapClicker = document.querySelector('.map')
-
-	mapClicker.addEventListener('click', show)
-	// document.addEventListener('click', show)
-
-	function show(){
-		event.preventDefault()
-	};
-</script>
-```
-
-```
-<div class="popover">
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.821674756671!2d-73.97492268461596!3d40.67789794763805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba8edab126b%3A0xfaa0551477e2ec72!2sGeido!5e0!3m2!1sen!2sus!4v1490213487125" width="300" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>
-</div>
-```
 
 ```
 .popover {
@@ -91,7 +53,7 @@ Add a class of `.map` to the map link
 	position: fixed;
 	top: calc(50% - 100px);
 	left: calc(50% - 150px);
-	/*display: none;*/
+	display: none;
 }
 ```
 
@@ -114,6 +76,55 @@ Add a class of `.map` to the map link
 </script>
 ```
 
+Adding a [X] to close the popover.
+
+1. make the css external
+2. review http://fontawesome.io/examples/
+3. make font awesome accessible `@import url(font-awesome-4.6.3/css/font-awesome.min.css);`
+4. http://fontawesome.io/icons/ looks like `fa-times` will work
+
+```
+<div class="popover">
+	<span class="closer"><i class="fa fa-times" aria-hidden="true"></i></span>
+	<iframe>...</iframe>
+</div>
+```
+
+```
+.popover .closer {
+	/*float:right;*/
+	position: absolute;
+	top: 0;
+	right: 6px;
+}
+```
+
+```
+<script type="text/javascript">
+	var mapClicker = document.querySelector('.map')
+	var popOver = document.querySelector('.popover')
+	var closeButton = document.querySelector('.closer')
+	mapClicker.addEventListener('click', show)
+	closeButton.addEventListener('click', show)
+
+	function show(){
+		popOver.classList.toggle('showme')
+		event.preventDefault()
+	}
+</script>
+```
+
+```
+a {
+	color: #aa0000;
+	text-decoration: none;
+	transition: color .5s;
+}
+a:hover {
+	text-decoration: underline;
+	color: red;
+}
+```
 
 
 ## Styling a List with Floats

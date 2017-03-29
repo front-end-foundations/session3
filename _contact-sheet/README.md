@@ -1,14 +1,14 @@
-#FOUNDATIONS Session Three
+# FOUNDATIONS Session Three
 
 
-##Floating Image Gallery
+## Floating Image Gallery
 
 Goals:
 
 * keep as many images as possible above the fold
 * no horizontal scroll bars 
 
-###Lay of the land
+### Lay of the land
 
 The following classes are used in the html:
 
@@ -19,7 +19,7 @@ The following classes are used in the html:
 * title / catno / price (list item classes)
 
 
-###Part One - Contact Sheet
+### Part One - Contact Sheet
 
 ![Sample image](Contact-sheet/1-contact-sheet.jpg)
 
@@ -303,16 +303,6 @@ Increase spacing between items
 }
 ```
 
-
-
-##Homework
-
-1. 
-
-
-
-##Reading 
-* CSS Mastery: Advanced Web Standards Solutions - chapters 4-5
 
 Notes
 
