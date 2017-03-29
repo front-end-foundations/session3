@@ -225,6 +225,32 @@ Or use rgba.
 
 `box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);`
 
+### Replacing the bg Image
+
+```
+border-image:
+      linear-gradient(to bottom, black, rgba(0, 0, 0, 0)) 1 100%;
+```
+
+Removing the background image and replacing it with CSS is difficult here but worthwhile since it allows us to use the component at any width and height we need.
+
+Note the use of border-image below:
+
+```
+.menu-list {
+	padding:10px 0;
+	float:left;
+	width:304px; 
+	border-width: 4px 4px 0 4px;
+    border-left-style: solid;
+    border-right-style: solid;
+	border-image: linear-gradient(to bottom, rgb(200, 205, 210), rgba(0, 0, 0, 0)) 1 100%;
+    background: linear-gradient(to bottom, rgba(200, 205, 210,1) 0%, rgba(200, 205, 210,1) 1%, rgba(240,240,240,0.4) 1.5%, rgba(240,240,240,0) 100%);
+}
+```
+
+See [this article](https://css-tricks.com/examples/GradientBorder/) for more examples of fancy border effects (the vendor prefixes - `-webkit-` etc.` - are not really necessary at this point).
+
 
 
 ## Box Model - Border Box
@@ -233,14 +259,6 @@ Working with the alternate box model in version-2-fluid.
 
 This is a simplified version of the first exercise. Examine the html and css.
 
-Initialize border-box on all elements:
-
-```css
-* {
-	...
-	box-sizing: border-box;
-}
-```
 Remove the width rule from the menu-list and note its size. Add `width: 100%`.
 
 ```css
@@ -250,6 +268,19 @@ Remove the width rule from the menu-list and note its size. Add `width: 100%`.
 	width: 100%;
 }
 ```
+
+Note the horizontal scroll bar.
+
+Initialize border-box on all elements:
+
+```css
+* {
+	...
+	box-sizing: border-box;
+}
+```
+
+No scrolling.
 
 ```css
 .menu-list dl {

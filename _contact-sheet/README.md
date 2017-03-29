@@ -20,16 +20,21 @@ The following classes are used in the html:
 
 Images are 128px by 96px (landscape) or 96px by 128px (portrait)
 
-Slide background images are 160px by 160px and are located in the css folder.
+Slide background images are 160px by 160px and are located in the css folder. 
 
-The black area in the center of each slide image is the same as the image sizes.
+frame-ls and -pt images - are 160px square:
+
+![Sample image](Contact-sheet/styles/img/frame-ls.gif)
+![Sample image](Contact-sheet/styles/img/frame-pt.gif)
+
+The black area in the center of each slide image is the same as the image sizes (128px by 96px or 96px by 128px).
 
 
 ### Part One - Contact Sheet
 
 ![Sample image](Contact-sheet/1-contact-sheet.jpg)
 
-Create and new stles.css document in the styles directory and link it to start.html.
+Create and new styles.css document in the styles directory and link it to start.html.
 
 ```html
 <link rel="stylesheet" href="styles/styles.css" />
@@ -123,11 +128,6 @@ We do this by adding 16px to the top and bottom of .ls images and to the left an
   margin:0 16px;
 }
 ```
-
-The frame-ls and -pt images - are 160px square
-
-![Sample image](Contact-sheet/styles/img/frame-ls.gif)
-![Sample image](Contact-sheet/styles/img/frame-pt.gif)
 
 background-image vs `<img>`?
 
