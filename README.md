@@ -2,9 +2,10 @@
 
 ## Homework
 
-1. Following the steps we took in the Contact Sheet exercise, add a third css style sheet to make the layout look like this.
+1. Use flexbox to add a third css style sheet to make the layout look like this:
 ![Sample image](_contact-sheet/Contact-sheet/3-gallery.jpg)
-and add it to the style sheet switcher (see the `_contact-sheet-done` folder).
+
+Add it to the style sheet switcher (see the `_contact-sheet-done` folder). 
 
 
 ## Reading 
