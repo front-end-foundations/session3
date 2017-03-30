@@ -1,4 +1,9 @@
 # Contact Sheet
+ 
+Goals:
+
+* keep as many images as possible above the fold
+* no horizontal scroll bars 
 
 ### Lay of the land
 
@@ -10,36 +15,38 @@ The following classes are used in the html:
 * tn - thumbnail link
 * title / catno / price (list item classes)
 
-Note the use of multiple classes:
-
-```
-<div class="pic ls">
-```
-
-The images are 128px by 96px (landscape) or 96px by 128px (portrait)
+Images are 128px by 96px (landscape) or 96px by 128px (portrait)
 
 Slide background images are 160px by 160px and are located in the css folder. 
-(`background-image` vs `<img>`)
 
-🔥frame-ls and -pt images - are 160px square:
+frame-ls and -pt images - are 160px square:
 
 ![Sample image](Contact-sheet/styles/img/frame-ls.gif)
 ![Sample image](Contact-sheet/styles/img/frame-pt.gif)
 
 The black area in the center of each slide image is the same as the image sizes (128px by 96px or 96px by 128px).
 
+
+### Part One 
+
 ![Sample image](Contact-sheet/1-contact-sheet.jpg)
+
+Create and new styles.css document in the styles directory and link it to start.html.
+
+```html
+<link rel="stylesheet" href="styles/styles.css" />
+```
 
 Add and examine the normalize.css file
 
 ```html
-<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="styles/normalize.css" />
 ```
 
-Create and new styles.css document in the css directory and link it to start.html.
+Add Google font:
 
-```html
-<link rel="stylesheet" href="css/styles.css" />
+```css
+@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
 ```
 
 Add the base styles:
@@ -48,8 +55,8 @@ Add the base styles:
 body {
 	background:#eed;
 	padding:1em;
-	font-family: verdana, sans-serif;
-	font-size: 62.5%;
+	font-family: 'Lato', sans-serif;
+	font-size: 100%; 
 }
 #footer {
 	padding-top: 3em;
@@ -63,20 +70,8 @@ The font size is 62.5% of 1em or 10px, the height is 12px and padding is 62.5% o
 
 Note: The box model uses font size to calculate padding. It creates a context where measurements are relative.
 
-Change units to rem:
 
-```
-#footer {
-  padding-top: 3rem;
-  font-size: 1rem; 
-}
-```
-
-rem = root em and is based on the top level HTML tag settings.
-
-#### but I digress
-
-Change the body font size to 100%. 
+Change the base font size to 100%. 
 
 ```css
 body {
@@ -131,9 +126,9 @@ We do this by adding 16px to the top and bottom of .ls images and to the left an
 }
 ```
 
-Edit the pic class to add 1em (16px) padding and the background images. 
+background-image vs `<img>`?
 
-The additional padding takes the overall size to 160px:
+Edit the pic class to add 1em (16px) padding and the background images. The additional padding takes the overall size to 160px:
 
 ```css
 .pic {
@@ -164,7 +159,7 @@ Remove the border from the pic divs.
 
 ### Using Flexbox
 
-Remove the float from `.pic` (and `clear: both` is no longer necessary).
+Remove the float from `.pic`
 
 Add a div with class wrap around all the pic divs.
 
@@ -208,18 +203,15 @@ Flex justify-content:
 
 `justify-content: flex-start | flex-end | center | space-between | space-around;`
 
-
 Flex align-items: like justify content but for the other axis.
 
-Add `height: 100vh;` to the wrap container.
+Add `height: 100vh;` to the wrap constiner.
 
 `align-items: flex-start | flex-end | center | baseline | stretch;`
-
 
 Flex align-content: note center setting in this context
 
 `align-content: flex-start | flex-end | center | space-between | space-around | stretch;`
-
 
 #### Flex children (.pic here)
 
@@ -233,8 +225,6 @@ Flex item order:
     order: 2;
 }
 ```
-
-Note: the HTML source order is unchanged. This makes this property very powerful.
 
 A single slide [nth child](https://www.w3schools.com/cssref/sel_nth-child.asp)
 
@@ -254,34 +244,17 @@ A single slide [nth child](https://www.w3schools.com/cssref/sel_nth-child.asp)
 }
 ```
 
-####Demo
-
 Flex item grow: use sushi sample nav bar (single li) to view.
 
 `flex-grow: <number>; /* default 0 */`
 
-```
-.nav li:nth-child(2) {
-  flex-grow: 2
-}
-```
-
-Flex item flex: This is the shorthand for flex-grow, flex-shrink and flex-basis. 
-
-The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto.
+Flex item flex: This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto.
 
 `flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
 
 Flex item align-self: increase height of nav to 5rem
 
 `align-self: auto | flex-start | flex-end | center | baseline | stretch;`
-
-```
-.nav li:nth-child(2) {
-  flex-grow: 2;
-  align-self: flex-end;
-}
-```
 
 
 
@@ -292,14 +265,7 @@ Flex item align-self: increase height of nav to 5rem
 
 ![Sample image](Contact-sheet/2-catalog.jpg)
 
-Unlink the current css:
-
-```
-<link rel="stylesheet" href="css/styles-alt.css" />
-```
-
- and add the following to styles-alt:
-
+Leave the following in from the first sample:
 ```css
 @import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
 
@@ -333,11 +299,18 @@ Portrait - align the image thumbnails:
 
 ```css
 .pt .tn {
+	width: 96px;
 	margin-right: 32px;
 }
 ```
 
+Landscape - align the image thumbnails
+
 ```css
+.ls .tn {
+	width: 128px 
+}
+
 .tn img {
 	border: 1px solid #333;
 }
@@ -353,13 +326,13 @@ Add margins and padding to separate text and pic and remove bullets
 	border: 3px double #552;
 }
 ```
-
-Format ul content:
+Format content:
 
 ```css
 .pic .title {
 	font-weight: bold;
-  padding: 0.5rem 0;
+	font-size: 1rem;
+    padding: 0.5rem 0;
 	border-bottom: 1px solid #333;
 	padding-left: 0.5rem;
 }
@@ -397,7 +370,7 @@ EDIT - Slide price up
 ```css
 .pic .price {
   ... 
-	margin: -1.2rem 0 0 0;
+	margin: -1.2rem 0.5rem 0 0;
 }
 ```
 
@@ -439,11 +412,9 @@ Increase spacing between items
 }
 ```
 
-
-### Flex Version
+### Part Two: Flex Version
 
 Remove floats, clears, and `/* margin-left:140px; */` from .pic ul:
-
 ```
 .pic .tn {
     /*float: left;*/
@@ -489,10 +460,48 @@ Add:
 }
 ```
 
-v.s. stretch
+(v.s. stretch)
 
 
-Notes
+## Style Sheet Switcher
+
+```
+<link class="switchLink" rel="stylesheet" href="css/styles-alt.css" />
+```
+
+```
+<script>
+  var switchLink = document.querySelector('.switchLink')
+  switchLink.setAttribute('href', 'css/styles.css')
+</script>
+```
+
+
+```
+<select id="selectCss">
+  <option value="styles-alt">Price List</option>
+  <option value="styles">Contact Sheet</option>
+</select>
+```
+
+```
+<script>
+  var selectCss = document.getElementById('selectCss')
+  var switchLink = document.querySelector('.switchLink')
+  selectCss.addEventListener('change', switchCss)
+  function switchCss(){
+    console.log(selectCss.value)
+    switchLink.setAttribute('href', 'css/' + selectCss.value + '.css')
+  }
+</script>
+```
+
+or
+
+```
+switchLink.setAttribute('href', `css/${selectCss.value}.css`)
+```
+
 
 
 
