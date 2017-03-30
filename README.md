@@ -36,7 +36,7 @@ and add it to the style sheet switcher (see the `_contact-sheet-done` folder).
 ```
 
 
-## DOM Scripting - review
+### DOM Scripting
 
 * Selecting items with `document.querySelector`
 
@@ -82,7 +82,7 @@ And created the class that will be added by classList.add():
 }
 ```
 
-### Adding a [X] to close the popover.
+### Homework: Adding a [X] to close the popover.
 
 1. make the css external
 2. some usage samples from [Font Awesome](http://fontawesome.io/examples/)
