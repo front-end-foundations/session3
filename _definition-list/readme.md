@@ -1,10 +1,4 @@
-# FOUNDATIONS session 3
-
-## Homework
-
-1. Add a styled defiition list component to last week's homework.
-
-## Definition Lists
+# Definition List Styling
 
 [Here is a summary](http://www.w3schools.com/html/html_lists.asp) of the different types of lists in HTML. And [an article](http://maxdesign.com.au/articles/definition/) specifically on definition lists.
 
