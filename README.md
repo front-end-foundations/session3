@@ -3,7 +3,7 @@
 ## Homework
 
 1. Following the steps we took in the Contact Sheet exercise, add a third css style sheet to make the layout look like this.
-![Sample image](_contact-sheet/Contact-sheet/styles/img/frame-ls.gif)
+![Sample image](_contact-sheet/Contact-sheet/3-gallery.jpg)
 and add it to the style sheet switcher.
 
 
