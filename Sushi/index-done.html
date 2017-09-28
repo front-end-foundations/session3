@@ -3,13 +3,77 @@
 <head>
 	<title>Brooklyn Eats: Matsu</title>
 	<link href="https://fonts.googleapis.com/css?family=Crushed" rel="stylesheet">
+	<script src="https://use.fontawesome.com/a68f41e4bd.js"></script>
 	<link rel="stylesheet" href="styles/styles.css">
 	<style>
-
-	</style>
+	.nav {
+		display: flex;
+		padding: 0;
+	}
+	.nav li { 
+		flex: 1;
+		background-color: #d00;
+		list-style: none;
+		text-align: center;
+	}
+	.popover .closer {
+		/*float:right;*/
+		position: absolute;
+		top: -11px;
+		right: -14px;
+		color: var(--rust);
+	}
+	.popover {
+		box-shadow: 4px 4px 6px rgba(0,0,0,0.3);
+		z-index: 10;
+	}
+	.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.showme {
+	display: block;
+}
+	@media print {
+		* {
+			display: none !important;
+		}
+	}
+	@media screen and (max-width: 800px){
+		.nav {
+			top: 0;
+			left:0;
+			margin: 0;
+			background: var(--rust);
+		}
+		header {
+			padding-top: 30px;
+		}
+		aside {
+			position: static;
+			float: left;
+			margin-right: 20px;
+		}
+		article {
+			margin-left: 20px;
+		}
+		blockquote {
+			width: 100%;
+			float: none;
+			margin: 0;
+		}
+	}
+</style>
 </head>
 
 <body>
+	<div class="overlay"></div>
 	<div id="wrapper">
 		<nav>
 			<ul class="nav">
@@ -75,6 +139,10 @@
 	</div>
 
 	<div class="popover">
+		<span class="closer fa-stack fa-md">
+			<i class="fa fa-square fa-stack-2x"></i>
+			<i class="fa fa-times fa-stack-1x fa-inverse" aria-hidden="true"></i>
+		</span>
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.821674756671!2d-73.97492268461596!3d40.67789794763805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba8edab126b%3A0xfaa0551477e2ec72!2sGeido!5e0!3m2!1sen!2sus!4v1490213487125" width="300" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
 
@@ -82,11 +150,14 @@
 	<script type="text/javascript">
 		var mapClicker = document.querySelector('.map')
 		var popOver = document.querySelector('.popover')
-		console.log(popOver.height)
+		var closeButton = document.querySelector('.closer')
+		var overlay = document.querySelector('.overlay')
 		mapClicker.addEventListener('click', show)
+		closeButton.addEventListener('click', show)
 
 		function show(){
 			popOver.classList.toggle('showme')
+			overlay.classList.toggle('showme')
 			event.preventDefault()
 		}
 	</script>

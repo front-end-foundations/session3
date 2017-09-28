@@ -1,4 +1,4 @@
-# Front End Foundations Session Three
+# Session Three
 
 ## Homework
 
@@ -12,11 +12,6 @@ Add it to the style sheet switcher (see the `_contact-sheet-done` folder).
 
 * [Responsive Web Design](https://abookapart.com/products/responsive-web-design) - finish it
 * [JavaScript for Web Designers](https://abookapart.com/products/javascript-for-web-designers) Chapter 1 -Getting Set Up, Chapter 2 - Understanding Data Types, Chapter 3 - Conditional Statements
-
-
-## Server Accounts
-
-[See session one](https://github.com/front-end-foundations/session1#aside---server-accounts)
 
 
 ## Sushi Review
@@ -36,63 +31,64 @@ Add it to the style sheet switcher (see the `_contact-sheet-done` folder).
 }
 ```
 
-
-### DOM Scripting
-
-* Selecting items with `document.querySelector`
-
-* attaching events with `addEventListener()`
-
-* Manipulating HTML with `classList`
+## Responsive Design
 
 ```
-<script>
-	var mapClicker = document.querySelector('.map')
-	var popOver = document.querySelector('.popover')
-	mapClicker.addEventListener('click', show)
-
-	function show(){
-		popOver.classList.toggle('showme')
-		event.preventDefault()
-	};
-</script>
-```
-
-We designed the popover and hid it:
-
-```
-.popover {
-	padding: 1rem;
-	width: 300px;
-	height: 225px;
-	background: #fff;
-	border: 1px solid var(--hilite-color);
-	border-radius: var(--radius);
-	position: fixed;
-	top: calc(50% - 100px);
-	left: calc(50% - 150px);
-	display: none;
+@media print {
+	* {
+		display: none !important;
+	}
 }
 ```
 
-And created the class that will be added by classList.add():
 
 ```
-.showme {
-	display: block;
+@media screen and (max-width: 800px){
+	.nav {
+		top: 0;
+		left:0;
+		margin: 0;
+		background: var(--rust);
+	}
+	header {
+		padding-top: 30px;
+	}
+	aside {
+		position: static;
+		float: left;
+		margin-right: 20px;
+	}
+	article {
+		margin-left: 20px;
+	}
+	blockquote {
+		width: 100%;
+		float: none;
+		margin: 0;
+	}
 }
 ```
 
-### Homework: Adding a [X] to close the popover.
 
-1. make the css external
-2. some usage samples from [Font Awesome](http://fontawesome.io/examples/)
-3. make font awesome accessible: `@import url(font-awesome-4.6.3/css/font-awesome.min.css);`
-4. http://fontawesome.io/icons/ looks like `fa-times` will work
+### DOM Scripting - Adding a close button
+
+Before starting, review the HTML, CSS and JavaScript that enables the popover from last week.
+
+1. Getting started with [Font Awesome](http://fontawesome.io/get-started/)
+1. Examine some usage samples from [Font Awesome](http://fontawesome.io/examples/)
+1. Make Font Awesome accessible to the page e.g.: `@import url(font-awesome-4.6.3/css/font-awesome.min.css);` or
+
+```
+<script src="https://use.fontawesome.com/a68f41e4bd.js"></script>
+```
+
+1. http://fontawesome.io/icons/ looks like `fa-times` will work. 
+
+Add a span tag to the popover:
 
 ```
 <div class="popover">
-	<span class="closer"><i class="fa fa-times" aria-hidden="true"></i></span>
+	<a class="closer"><i class="fa fa-times" aria-hidden="true"></i></a>
 	<iframe>...</iframe>
 </div>
 ```
@@ -103,12 +99,13 @@ And created the class that will be added by classList.add():
 }
 ```
 
+Edit the script to include a reference to the new close button:
+
 ```
 <script type="text/javascript">
-	var mapClicker = document.querySelector('.map')
-	var popOver = document.querySelector('.popover')
+	...
 	var closeButton = document.querySelector('.closer')
-	mapClicker.addEventListener('click', show)
+	...
 	closeButton.addEventListener('click', show)
 
 	function show(){
@@ -137,19 +134,19 @@ Try a recipe from font-awesome:
 }
 ```
 
-Don't forget to add a shadow to the popover.
+Add a shadow to the popover:
 
 ```
 box-shadow: 4px 4px 6px rgba(0,0,0,0.3)
 ```
 
-..and becasue we are not using an anchor tag:
+..and because we are not using an anchor tag:
 
 ```
 cursor: pointer;
 ```
 
-...or better yet:
+<!-- ...or better yet:
 
 ```
 <span class="closer fa-stack fa-md">
@@ -158,7 +155,7 @@ cursor: pointer;
 	<i class="fa fa-times fa-stack-1x fa-inverse" aria-hidden="true"></i>
 	</a>
 </span>
-```
+``` -->
 
 ...and a overlay for effect:
 
@@ -184,12 +181,9 @@ cursor: pointer;
 ...and turn it on:
 
 ```
-var mapClicker = document.querySelector('.map')
-var popOver = document.querySelector('.popover')
-var closeButton = document.querySelector('.closer')
+...
 var overlay = document.querySelector('.overlay')
-mapClicker.addEventListener('click', show)
-closeButton.addEventListener('click', show)
+...
 
 function show(){
 	popOver.classList.toggle('showme')
@@ -198,9 +192,11 @@ function show(){
 }
 ```
 
-Important to note here that there is no possibility of animating this because we are using `display: block` and `display: none`. These are binary states and cannot be used for effects like fading on etc. More on this in a later class.
+Review: using the z-index css property to control stacking order.
 
-But we can animate the button:
+Note here that there is no possibility of animating this because we are using `display: block` and `display: none`. These are binary states and cannot be used for effects like fading on etc. More on this in a later class.
+
+But we can animate the link:
 
 ```
 a {
