@@ -10,19 +10,15 @@ In Sushi set the anchor tags to use display flex
 ```
 .nav {
 	display: flex;
-	padding: 0;
+	...
 }
 .nav li { 
 	flex: 1;
-	background-color: #d00;
-	list-style: none;
-	text-align: center;
+	...
 }
 ```
 
 ## Responsive Design
-
-[The responsive meta tag](https://css-tricks.com/snippets/html/responsive-meta-tag/)
 
 ```
 @media print {
@@ -60,6 +56,14 @@ In Sushi set the anchor tags to use display flex
 }
 ```
 
+Test in the browser
+
+[The responsive meta tag](https://css-tricks.com/snippets/html/responsive-meta-tag/)
+
+```html
+<meta name="viewport" content="width=device-width">
+```
+
 
 ### DOM Scripting - Adding a close button
 
@@ -73,7 +77,7 @@ Before starting, review the HTML, CSS and JavaScript that enables the popover fr
 <script src="https://use.fontawesome.com/a68f41e4bd.js"></script>
 ```
 
-1. http://fontawesome.io/icons/ looks like `fa-times` will work. 
+1. [Examine](http://fontawesome.io/icons/) looks like `fa-times` will work. 
 
 Add a span tag to the popover:
 
@@ -106,7 +110,7 @@ Edit the script to include a reference to the new close button:
 </script>
 ```
 
-Try a recipe from font-awesome:
+Try a [recipe](http://fontawesome.io/examples/) from font-awesome:
 
 ```
 <span class="closer fa-stack fa-md">
@@ -114,6 +118,8 @@ Try a recipe from font-awesome:
 	<i class="fa fa-times fa-stack-1x fa-inverse" aria-hidden="true"></i>
 </span>
 ```
+
+Here's an alternate method of formatting the close button:
 
 ```
 .popover .closer {
@@ -131,24 +137,13 @@ Add a shadow to the popover:
 box-shadow: 4px 4px 6px rgba(0,0,0,0.3)
 ```
 
-..and because we are not using an anchor tag:
+..and because we are not using an anchor tag, add this to the close button:
 
 ```
 cursor: pointer;
 ```
 
-<!-- ...or better yet:
-
-```
-<span class="closer fa-stack fa-md">
-	<a href="https://www.google.com/maps/place/Geido/@40.6778979,-73.9749227,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25ba8edab126b:0xfaa0551477e2ec72!8m2!3d40.6778939!4d-73.972734" target="_blank">
-	<i class="fa fa-square fa-stack-2x"></i>
-	<i class="fa fa-times fa-stack-1x fa-inverse" aria-hidden="true"></i>
-	</a>
-</span>
-``` -->
-
-...and a overlay for effect:
+...and an overlay for effect:
 
 ```
 <body>
@@ -185,13 +180,15 @@ function show(){
 
 Review: using the z-index css property to control stacking order.
 
-Note here that there is no possibility of animating this because we are using `display: block` and `display: none`. These are binary states and cannot be used for effects like fading on etc. More on this in a later class.
+We need to control z-index in this case by giving the popover a hight number than the overlay.
+
+Note that there is no possibility of animating this because we are using `display: block` and `display: none`. These are binary states and cannot be used for effects like fading on etc. More on this in a later class.
 
 But we can animate the link:
 
 ```
 a {
-	color: #aa0000;
+	...
 	text-decoration: none;
 	transition: color .5s;
 }
