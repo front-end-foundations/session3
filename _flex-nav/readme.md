@@ -66,7 +66,7 @@ Gear:
 <i class="fa fa-gear"></i>
 ```
 
-A font stack that ensures the device's default font will be used (native font):
+A font stack that ensures the [device's default font](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/) will be used (native font):
 
 ```
 body {
@@ -77,7 +77,7 @@ body {
 ```css
 header {
   background: #0D1313;
-  color: white;
+  color: #fff;
   display: flex;
   align-items: center;
   padding:0.5rem;
@@ -92,12 +92,14 @@ header {
   color: white;
   padding: 10px;
 }
+
 .site-nav ul {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
+
 .site-nav  a {
   text-transform: uppercase;
   text-decoration: none;
@@ -105,6 +107,7 @@ header {
   padding: 20px;
   display: inline-block;
 }
+
 .site-nav .active a {
   font-weight: bold;
   color: #62DEBE;
@@ -123,12 +126,14 @@ header {
   font-size: 0.8rem;
   margin-left: 10px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 ```
 
 [The responsive meta tag](https://css-tricks.com/snippets/html/responsive-meta-tag/)
 
-```
+```css
+
 @media (max-width: 600px) {
   header {
     flex-wrap: wrap;
@@ -139,6 +144,72 @@ header {
     width: 100%;
   }
 }
-
-
 ```
+
+Refactor CSS for `text-decoration`, `text-transform` ...
+
+### Interactivity
+
+See `index-done.html` for a demo.
+
+Part ONE - get the gear icon to expose the options
+
+```js
+
+var gear = document.querySelector('.fa-gear')
+var options = document.querySelector('.account-dropdown ul')
+
+gear.addEventListener('click', showOptions)
+
+function showOptions(){
+  options.classList.toggle('active')
+}
+```
+
+Note - requires corresponding CSS (see `index-done.html`)
+
+```css
+
+.active {
+  display: flex !important;
+}
+
+.account-dropdown {
+  position: relative;
+  display: flex;
+}
+
+.account-dropdown ul {
+  padding: 4px;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  top: 20px; 
+  left: 10px;
+  color: #333;
+  background: #fff;
+  font-size: 0.875rem;
+}
+```
+
+Part TWO - add active class to the navigation
+Introduces for loops and 'this' 
+
+```js
+
+var mainNav = document.querySelectorAll('.site-nav li')
+
+for ( var i = 0; i < mainNav.length; i++){
+  mainNav[i].addEventListener('click', setActive)
+}
+
+function setActive(){
+  for ( var i = 0; i < mainNav.length; i++){
+    mainNav[i].classList.remove('active')
+  }
+  this.classList.add('active')
+  event.preventDefault()
+}
+```
+
+

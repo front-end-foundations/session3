@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <title>Display: flex nav</title>
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
   <style>
 
   body {
-    font-family: 'Roboto', sans-serif;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 
@@ -65,18 +64,44 @@
     font-size: 0.8rem;
     margin-left: 10px;
     text-transform: uppercase;
+    text-decoration: none;
   }
 
+  /*added for displaying menu*/
+
+  .active {
+    display: flex !important;
+  }
+
+  .account-dropdown {
+    position: relative;
+    display: flex;
+  }
+
+  .account-dropdown ul {
+    padding: 4px;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 20px; 
+    left: 10px;
+    color: #333;
+    background: #fff;
+    font-size: 0.875rem;
+  }
+
+  /*added for responsive*/
+
   @media (max-width: 600px) {
-  header {
-    flex-wrap: wrap;
+    header {
+      flex-wrap: wrap;
+    }
+    .site-nav {
+      order: 2;
+      background: #333;
+      width: 100%;
+    }
   }
-  .site-nav {
-    order: 2;
-    background: #333;
-    width: 100%;
-  }
-}
 </style>
 </head>
 
@@ -107,25 +132,29 @@
 </header>
 
 <script>
-  // part one - get the gear icon to expose the options
+  // part ONE - get the gear icon to expose the options
   var gear = document.querySelector('.fa-gear')
   var options = document.querySelector('.account-dropdown ul')
+
   gear.addEventListener('click', showOptions)
+
   function showOptions(){
     options.classList.toggle('active')
   }
-  // part two - add active class to the navigation
+
+  // part TWO - add active class to the navigation
+  // introduces for loops and 'this' 
   var mainNav = document.querySelectorAll('.site-nav li')
+
   for ( var i = 0; i < mainNav.length; i++){
-    // console.log(mainNav[i])
-    mainNav[i].addEventListener('click', testerFunc)
+    mainNav[i].addEventListener('click', setActive)
   }
-  function testerFunc(){
+
+  function setActive(){
     for ( var i = 0; i < mainNav.length; i++){
       mainNav[i].classList.remove('active')
     }
     this.classList.add('active')
-    // console.log('test')
     event.preventDefault()
   }
 
