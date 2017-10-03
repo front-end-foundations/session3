@@ -44,12 +44,6 @@
 		border-bottom: none;
 	}
 
-	div {
-		height: 10rem;
-		border: 1px solid #9b8748;
-		padding-top: 4rem;
-		padding-left: 46px;
-	}
 </style>
 
 </head>
@@ -62,12 +56,8 @@
 			<li class="t-delivery"><a href="#04">Delivery</a></li>
 		</ul>
 	</nav>
-<!-- 	<div id="01">Cuisines</div>
-	<div id="02">Chefs</div>
-	<div id="03">Reviews</div>
-	<div id="04">Delivery</div> -->
 
-	<p style="clear:both; padding: 10rem 2rem 2rem 2rem;"></p>
+	<p style="padding: 10rem 2rem 2rem 2rem;"></p>
 
 	<script>
 
@@ -82,6 +72,8 @@
 		var tabs = document.querySelectorAll('#nav a')
 		var contentPara = document.querySelector('p')
 		tabs.forEach( tab => tab.addEventListener('click', makeActive))
+
+		contentPara.innerHTML = hash01
 
 		function makeActive(){
 			makeInactive()
