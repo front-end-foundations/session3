@@ -10,10 +10,10 @@
 * [Responsive Web Design](https://abookapart.com/products/responsive-web-design) - finish it
 * [JavaScript for Web Designers](https://abookapart.com/products/javascript-for-web-designers) Chapter 1 -Getting Set Up, Chapter 2 - Understanding Data Types, Chapter 3 - Conditional Statements
 
-## Review `Tabs` from last week.
+#### Review `Tabs` from last week.
 
 
-## Exercise 1 - sushi review
+## Exercise 1 - `Sushi` review
 
 See the readme file in the `Sushi` directory
 
