@@ -2,6 +2,7 @@
 
 ## Homework
 
+1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples,  write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate.
 1. Use flexbox to add a third css style sheet to make the layout look like this:
 ![Sample image](_contact-sheet/Contact-sheet/3-gallery.jpg)
 
@@ -16,7 +17,12 @@ Add it to the style sheet switcher (see the `_contact-sheet-done` folder).
 
 ## Sushi Review
 
-* the anchor tags use display flex
+Read first - [What is Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
+
+* flex is a *display* attribute like `block, inline, block-inline`
+* do not confuse it with *positioning* which we have looked at for absolute positioning
+
+In Sushi set the anchor tags to use display flex
 
 ```
 .nav {
@@ -32,6 +38,8 @@ Add it to the style sheet switcher (see the `_contact-sheet-done` folder).
 ```
 
 ## Responsive Design
+
+[The responsive meta tag](https://css-tricks.com/snippets/html/responsive-meta-tag/)
 
 ```
 @media print {
@@ -210,6 +218,9 @@ a:hover {
 }
 ```
 
+## Exercise - using flexbox to create a nav bar
+
+See the readme file in the `_flex-nav` directory
 
 
 Notes

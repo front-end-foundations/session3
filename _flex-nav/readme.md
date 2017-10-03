@@ -9,13 +9,60 @@
 
 [Font Awesome](http://fontawesome.io/)
 
+Create the HTML:
+
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Display: flex nav</title>
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <a href="#0" class="logo">Logo</a>
+
+    <nav class="site-nav">
+      <ul>
+        <li class="active"><a href="recipes.html">Recipes</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="delivery.html">Delivery</a></li>
+      </ul>
+    </nav>
+
+    <div class="account-actions">
+      <div class="account-dropdown">
+         Gear
+        <ul>
+          <li>Your Account</li>
+        </ul>
+      </div>
+      <a href="#0" class="sign-out-link">Sign Out</a>
+    </div>
+
+  </header>
+
+</body>
+</html>
+
+```
+
 ```
 <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+```
 
-<!-- Logo -->
+Logo:
+
+```
 <i class="fa fa-bullseye fa-3x"></i>
+```
 
-<!-- Gear -->
+Gear:
+
+```
 <i class="fa fa-gear"></i>
 ```
 
@@ -27,7 +74,7 @@ body {
 }
 ```
 
-```
+```css
 header {
   background: #0D1313;
   color: white;
@@ -77,9 +124,13 @@ header {
   margin-left: 10px;
   text-transform: uppercase;
 }
+```
 
+[The responsive meta tag](https://css-tricks.com/snippets/html/responsive-meta-tag/)
+
+```
 @media (max-width: 600px) {
-  .site-header {
+  header {
     flex-wrap: wrap;
   }
   .site-nav {
