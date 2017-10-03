@@ -12,6 +12,11 @@ In Sushi set the anchor tags to use display flex
 	display: flex;
 	...
 }
+```
+
+NB. The below is not really visible until we get onto a small screen.
+
+```
 .nav li { 
 	flex: 1;
 	...
@@ -30,12 +35,13 @@ In Sushi set the anchor tags to use display flex
 
 
 ```
-@media screen and (max-width: 800px){
+@media screen and (max-width: 768px){
 	.nav {
 		top: 0;
 		left:0;
 		margin: 0;
 		background: var(--rust);
+		position: fixed;
 	}
 	header {
 		padding-top: 30px;
