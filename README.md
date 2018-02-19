@@ -2,30 +2,20 @@
 
 ## Homework
 
-1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples,  write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate.
+<!-- 1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples, write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate. -->
 
-
-## Reading 
-
-* [Responsive Web Design](https://abookapart.com/products/responsive-web-design) - finish it
-* [JavaScript for Web Designers](https://abookapart.com/products/javascript-for-web-designers) Chapter 1 -Getting Set Up, Chapter 2 - Understanding Data Types, Chapter 3 - Conditional Statements
-
-#### Review `Tabs` from last week.
-
+## Reading
 
 ## Exercise 1 - `Sushi` review
 
-See the readme file in the `Sushi` directory
+See the readme file in the `_sushi` directory
 
+## Exercise 2 - using floats to create a nav bar
 
-## Exercise 2 - using flexbox to create a nav bar
+See the readme file in the `_float-nav` directory
+
+## Exercise 3 - using flexbox to create a nav bar
 
 See the readme file in the `_flex-nav` directory
 
-
 ### Notes
-
-
-
-
-
