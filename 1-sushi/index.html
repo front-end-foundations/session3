@@ -2,11 +2,145 @@
 <html>
 <head>
 	<title>Brooklyn Eats: Matsu</title>
+	<meta name="viewport" content="width=device-width">
 	<link href="https://fonts.googleapis.com/css?family=Crushed" rel="stylesheet">
-	<link rel="stylesheet" href="styles/styles.css">
 	<style>
+	@import url('http://fonts.googleapis.com/css?family=Lato:300,400,400i,700');
 
-	</style>
+	body {
+		margin: 0;
+		color: #333;
+		font-family: 'Lato', sans-serif;
+		background-color: #ddd;
+	}
+
+	header {
+		font-family: 'Crushed', cursive;
+		/*font-family: 'Lobster', cursive;*/
+	}
+
+	header h1,
+	header h2 {
+		font-weight: normal;
+	}
+
+	h2 {
+		font-weight: 300;
+	}
+
+	img {
+		float: right;
+	}
+	blockquote {
+		float: right;
+		width: 40%;
+		font-size: 24px;
+	}
+
+	.nav {
+		list-style: none;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 20px;
+	}
+
+	.nav li {
+		display: inline-block;
+		margin-right: 1em;
+	}
+
+	.nav a {
+		color: #fff;
+		text-decoration: none;
+		padding: 6px;
+		background: #600;
+		display: block;
+		border-radius: 3px;
+		transition: all 0.25s linear;
+	}
+
+	.nav a:hover {
+		color: #222;
+		background: #f9ecd1;
+	}
+
+	aside {
+		position: absolute;
+		top: 200px;
+		left: 10px;
+		width: 180px;
+		background-color: #f0dfb4;
+		padding: 6px;
+		border: 2px solid #600;
+		border-radius: 3px;
+		box-shadow: 3px 3px 6px #666;
+	}
+	article {
+		margin: 0 20px 0 240px;
+	}
+
+	#wrapper {
+		max-width: 840px;
+		border: 1px solid #999;
+		margin: 0 auto;
+		position: relative;
+		background-color: #fff;
+		box-shadow: 0px 0px 20px #666;
+	}
+
+	header h1,
+	header h2 {
+		color: #600;
+		margin-top: 20px;
+		margin-left: 20px;
+		font-size: 3rem;
+		margin-bottom: 0;
+	}
+	header h2 {
+		font-size: 32px;
+		margin-top: 0;
+	}
+
+	aside th {
+		text-align: right;
+	}
+
+	aside ul {
+		list-style: none;
+		margin: 1em;
+		padding: 0;
+	}
+
+	@media print {
+		* {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 800px){
+		.nav {
+			top: 0;
+			left: 0;
+			background-color: #600;
+			margin: 0;
+			position: fixed;
+			z-index: 100;
+		}
+		header h1 {
+			padding-top: 2rem;
+		}
+		aside {
+			position: static;
+			float: left;
+			margin-right: 20px; 
+		}
+		article {
+			margin-left: 20px;
+		}
+	}
+
+</style>
 </head>
 
 <body>
@@ -26,8 +160,9 @@
 		</header>
 
 		<article>
-			<h3>Geido</h3>
+			<h2>Matsu</h2>
 			<p class="summary"><strong>Bottom Line:</strong> Friendly, cozy, and oh so tasty</p>
+
 			<aside>
 				<table>
 					<tbody>
@@ -47,15 +182,14 @@
 				</table>
 
 				<ul>
-					<li>Geido</li>
+					<li>Matsu</li>
 					<li>1258 Flatbush Avenue</li>
 					<li>Brooklyn, NY 11238</li>
-					<li><a class="map" href="https://www.google.com/maps/place/Geido/@40.6778979,-73.9749227,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25ba8edab126b:0xfaa0551477e2ec72!8m2!3d40.6778939!4d-73.972734">Map</a> | <a href="#">Directions</a></li>
+					<li><a class="map" target="_blank" href="https://www.google.com/maps/place/Geido/@40.6778979,-73.9749227,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25ba8edab126b:0xfaa0551477e2ec72!8m2!3d40.6778939!4d-73.972734">Map</a> | <a href="#">Directions</a></li>
 					<li>(718) 767-1111</li>
 					<li><a href="#">Web site</a></li>
 				</ul>
 			</aside>
-
 			<p>If there's one <a href="#">Asian cuisine</a> we truly love, it's sushi (although dim sum comes a close second). Prepared correctly, sushi can be a work of sublime art to both the eyes and the tongue. There's nothing quite like the taste of a fresh piece of suzuki (sea bass) or salmon artfully combined with special rice and a hint of wasabi (Japanese horseradish). "Fresh fish in Brooklyn?" we hear you asking. Absolutely. There are several very good sushi restaurants in the area, but for our money, Matsu is at the head of the pack. <em>It's so good, it beats out most of the Brooklyn sushi places we've tried.</em></p>
 
 			<blockquote> It's so good, it beats out most of the Brooklyn sushi places we've tried.</blockquote>
@@ -74,40 +208,10 @@
 		</article>
 	</div>
 
-	<div class="popover">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.821674756671!2d-73.97492268461596!3d40.67789794763805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba8edab126b%3A0xfaa0551477e2ec72!2sGeido!5e0!3m2!1sen!2sus!4v1490213487125" width="300" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>
-	</div>
+	<script type="text/javascript" src="js/scripts.js"></script>
 
-
-	<script type="text/javascript">
-		var mapClicker = document.querySelector('.map')
-		var popOver = document.querySelector('.popover')
-		console.log(popOver.height)
-		mapClicker.addEventListener('click', show)
-
-		function show(){
-			popOver.classList.toggle('showme')
-			event.preventDefault()
-		}
-	</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
