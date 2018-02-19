@@ -8,14 +8,14 @@
 
 ## I - Sushi continued
 
-Use DOM scripting to create a popover. See the readme file in the `_sushi` directory
+Use DOM scripting to create a popover. See the readme file in the `1-sushi` directory
 
 ## II - Using floats to create a nav bar
 
-See the readme file in the `_float-nav` directory
+See the readme file in the `2-float-nav` directory
 
 ## III - Using flexbox to create a nav bar
 
-See the readme file in the `_flex-nav` directory
+See the readme file in the `3-flex-nav` directory
 
 ### Notes
