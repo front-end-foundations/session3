@@ -6,15 +6,15 @@
 
 ## Reading
 
-## Exercise 1 - `Sushi` review
+## I - Sushi continued
 
-See the readme file in the `_sushi` directory
+Use DOM scripting to create a popover. See the readme file in the `_sushi` directory
 
-## Exercise 2 - using floats to create a nav bar
+## II - Using floats to create a nav bar
 
 See the readme file in the `_float-nav` directory
 
-## Exercise 3 - using flexbox to create a nav bar
+## III - Using flexbox to create a nav bar
 
 See the readme file in the `_flex-nav` directory
 
