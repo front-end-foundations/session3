@@ -38,9 +38,10 @@
 
 // for (var i = 0; i < listItems.length; i++) {
 // 	listItems[i].style.backgroundColor = 'green';
+// 	console.log(i);
 // }
 
-// QUERYSLECTORALL replaces 90% of jQuery //
+// QUERYSELECTORALL replaces 90% of jQuery //
 // var listItems = document.querySelectorAll('li');
 
 // Gives BLOCKING error - the console log command never runs
@@ -50,10 +51,11 @@
 // NODELIST has a method called FOREACH
 // listItems.forEach(function(listItem) {
 // 	listItem.style.backgroundColor = 'red';
+// 	console.log(listItem);
 // });
 
 // QUERYSELECTOR //
-// make sure you add a class of 'map' and Google map link to the map anchor tag in the sidebar
+// Note the class of 'map' and Google map link to the map anchor tag in the sidebar
 // var mapLink = document.querySelector('.map');
 // mapLink.style.borderBottom = 'solid 8px red';
 // document.querySelector('.map').style.borderBottom = 'solid 8px red';
@@ -64,20 +66,22 @@
 // 	console.log('It works!');
 // });
 
+// EVENT preventing default
 // mapLink.addEventListener('click', function() {
 // 	console.log('It works!');
 // 	event.preventDefault();
 // });
 
-// (e)
-
+// EVENT properties
 // mapLink.addEventListener('click', function() {
 // 	console.log(event);
 // 	event.preventDefault();
 // });
 
+// CALLBACK function
 // mapLink.addEventListener('click', buttonClick);
 
+// NOTE - event is often shortened to (e)
 // function buttonClick(e) {
 // console.log('Map link clicked');
 // console.log(e);
@@ -85,8 +89,10 @@
 // console.log(e.type);
 // console.log(e.target.className);
 // console.log(e.target.classList);
+// CLIENT COORDS
 // console.log(e.clientX);
 // console.log(e.clientY);
+// LOCAL COORDS
 // console.log(e.offsetX);
 // console.log(e.offsetY);
 // event.preventDefault();
@@ -97,19 +103,35 @@
 // // Create a div and then look at it in the console
 // var newDiv = document.createElement('div');
 
-// // Add class
-// newDiv.className = 'popover';
+// // Store a reference to the H1
+// var headerOne = document.querySelector('header h1');
+
+// // Add the new div to the document
+// headerOne.appendChild(newDiv);
 
 // // Create text node
 // var newDivText = document.createTextNode('Hello World');
 
 // // Add text to div
 // newDiv.appendChild(newDivText);
+
 // newDiv.style.fontSize = '30px';
 // newDiv.style.color = 'red';
 
-// // Store a reference to the H1
-// var headerOne = document.querySelector('header h1');
+// // Add class
+// newDiv.className = 'popover';
 
-// // Add the new div to the document
-// headerOne.appendChild(newDiv);
+// ADD the below to styles.css?
+
+// .popover {
+// 	padding: 1rem;
+// 	width: 300px;
+// 	height: 225px;
+// 	background: #fff;
+// 	border: 1px solid var(--rust);
+// 	border-radius: var(--radius);
+// 	position: fixed;
+// 	top: calc(50% - 100px);
+// 	left: calc(50% - 150px);
+// 	display: none;
+// }
