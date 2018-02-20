@@ -487,6 +487,8 @@ At the bottom of the stylesheet
 
 See also [Can I Use](https://caniuse.com/#search=css%20variables)
 
+Declaration:
+
 ```css
 html {
 	--bg-color: #f0dfb4;
@@ -495,6 +497,8 @@ html {
 	--radii: 3px;
 }
 ```
+
+Usage:
 
 ```css
 .nav a {
@@ -608,8 +612,6 @@ Add a link to a [Google map](https://www.google.com/maps/place/Geido/@40.6778979
 
 Note the target attribute for the anchor tag. We have also used the class `map` to name this link.
 
-Add a class of `.map` to the map link
-
 ```html
 <script>
 	var mapClicker = document.querySelector('.map')
@@ -656,6 +658,8 @@ Add a new rule to the css:
 }
 ```
 
+Edit the script:
+
 ```html
 <script>
 	var mapClicker = document.querySelector('.map')
@@ -671,36 +675,34 @@ Add a new rule to the css:
 
 ### DOM Scripting - Adding a close button
 
-Before starting, review the HTML, CSS and JavaScript that enables the popover from last week.
-
-1. Getting started with [Font Awesome](http://fontawesome.io/get-started/)
+1. We will use [Font Awesome](https://fontawesome.com/cheatsheet) for icons
 1. Examine some usage samples from [Font Awesome](http://fontawesome.io/examples/)
-1. Make Font Awesome accessible to the page e.g.: `@import url(font-awesome-4.6.3/css/font-awesome.min.css);` or
+1. Load Font Awesome with:
 
-```
-<script src="https://use.fontawesome.com/a68f41e4bd.js"></script>
+```html
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 ```
 
 1. [Examine](http://fontawesome.io/icons/) looks like `fa-times` will work.
 
-Add a span tag to the popover:
+Add a link to the popover:
 
-```
+```html
 <div class="popover">
 	<a class="closer"><i class="fa fa-times" aria-hidden="true"></i></a>
 	<iframe>...</iframe>
 </div>
 ```
 
-```
+```css
 .popover .closer {
-	float:right;
+	float: right;
 }
 ```
 
 Edit the script to include a reference to the new close button:
 
-```
+```html
 <script type="text/javascript">
 	...
 	var closeButton = document.querySelector('.closer')
@@ -708,15 +710,14 @@ Edit the script to include a reference to the new close button:
 	closeButton.addEventListener('click', show)
 
 	function show(){
-		popOver.classList.toggle('showme')
-		event.preventDefault()
+		...
 	}
 </script>
 ```
 
 Try a [recipe](http://fontawesome.io/examples/) from font-awesome:
 
-```
+```html
 <span class="closer fa-stack fa-md">
 	<i class="fa fa-square fa-stack-2x"></i>
 	<i class="fa fa-times fa-stack-1x fa-inverse" aria-hidden="true"></i>
@@ -725,9 +726,9 @@ Try a [recipe](http://fontawesome.io/examples/) from font-awesome:
 
 Here's an alternate method of formatting the close button:
 
-```
+```css
 .popover .closer {
-  /* float: right; */
+	/* float: right; */
 	position: absolute;
 	top: -11px;
 	right: -14px;
@@ -737,40 +738,45 @@ Here's an alternate method of formatting the close button:
 
 Add a shadow to the popover:
 
-```
-box-shadow: 4px 4px 6px rgba(0,0,0,0.3)
+```css
+box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 ```
 
 ..and because we are not using an anchor tag, add this to the close button:
 
-```
-cursor: pointer;
+```css
+.popover .closer {
+	cursor: pointer;
+	...;
+}
 ```
 
-...and an overlay for effect:
+Add an overlay for effect:
 
-```
+```html
 <body>
 <div class="overlay"></div>
 <div id="wrapper">
 ```
 
-```
+```css
 .overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5);
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 ```
 
+Note that it blocks all the clicks.
+
 ...and turn it on:
 
-```
+```js
 ...
 var overlay = document.querySelector('.overlay')
 ...
@@ -782,27 +788,13 @@ function show(){
 }
 ```
 
-Review: using the z-index css property to control stacking order.
+We used the z-index css property to control stacking order for the menu (review).
 
 We need to control z-index in this case by giving the popover a hight number than the overlay.
 
 Note that there is no possibility of animating this because we are using `display: block` and `display: none`. These are binary states and cannot be used for effects like fading on etc. More on this in a later class.
 
-But we can animate the link:
-
-```
-a {
-	...
-	text-decoration: none;
-	transition: color .5s;
-}
-a:hover {
-	text-decoration: underline;
-	color: red;
-}
-```
-
-## Flexbox for the Nav
+## Flexbox for the Nav - Demo
 
 Read first - [What is Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
 
@@ -811,19 +803,17 @@ Read first - [What is Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/
 
 In Sushi set the anchor tags to use display flex
 
-```
+```css
 .nav {
 	display: flex;
-	...
+	...;
 }
 ```
 
-NB. The below is not really visible until we get onto a small screen.
-
-```
+```css
 .nav li {
 	flex: 1;
-	...
+	/*display: inline-block;*/
+	margin-right: 1em;
 }
 ```
-
