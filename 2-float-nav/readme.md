@@ -2,9 +2,7 @@
 
 <img src="tabs-image.jpg">
 
-Review the navigation from last week.
-
-In this exercise we will focus on list styling and navigation but instead of using `display: inline` or `display: inline-block` to create horizontal navigation we will use floats.
+In this exercise we will focus on list styling and navigation but instead of using `display: inline-block` or `display: flex` to create horizontal navigation we will use floats.
 
 ## Review in Sublime
 
@@ -14,7 +12,7 @@ In this exercise we will focus on list styling and navigation but instead of usi
 
 * Review [emmet syntax](http://docs.emmet.io/abbreviations/syntax/)
 
-Using emmet -->
+Using emmet:
 
 ```sh
 !
@@ -24,7 +22,9 @@ ul>li*4>a[href="#"]{link}
 nav>ul>li.t-cuisines*4>a[href="cuisines.html"]{cuisines}
 ```
 
-Create an HTML file and save it as `cuisines.html` into the `Tabs` folder.
+## Create the HTML
+
+Create an HTML file and save it as `cuisines.html` into the `2-float-nav` folder.
 
 * duplicate lines `cmd-d` and
 * use multiple cursors (`cmd`) to complete the classes and links so you end up with:
@@ -65,9 +65,9 @@ body {
 	font-family: 'Lucida Grande', sans-serif;
 }
 #nav {
-	background: #ffcb2d;
 	margin: 0;
 	padding: 10px 0 0 46px;
+	background-color: #ffcb2d;
 }
 ```
 
@@ -75,7 +75,8 @@ Firstly, remove the bullets from the `<ul>`:
 
 ```css
 #nav {
-	... list-style:none;
+	list-style: none;
+	...;
 }
 ```
 
@@ -105,7 +106,8 @@ Try adding a float to the 'collapsed' element:
 
 ```css
 #nav {
-	... float:left;
+	float: left;
+	...;
 }
 ```
 
@@ -115,17 +117,21 @@ Since we want the `<ul>` to extend the width of the window let's fix the width.
 
 ```css
 #nav {
-	... width:100%;
+	width: 100%;
+	...;
 }
 ```
 
-_When you float an element you usually have to specify a width._
+_When you float an element you almost always have to specify a width._
+
+Review the [background image CSS property](https://www.w3schools.com/cssref/pr_background-image.asp).
 
 Extend the background property to add a background graphic to the `<ul>`.
 
 ```css
 #nav {
-	... background:#ffcb2d url(i/nav_bg.gif);
+	background-image: url(i/nav_bg.gif);
+	...;
 }
 ```
 
@@ -135,7 +141,18 @@ Add positioning to the background.
 
 ```css
 #nav {
-	... background:#ffcb2d url(i/nav_bg.gif) repeat-x bottom left;
+	background-repeat: repeat-x;
+	background-position: bottom left;
+	...;
+}
+```
+
+Note: using the `background` shortcut we would write:
+
+```css
+#nav {
+	background: #ffcb2d url(i/nav_bg.gif) repeat-x bottom left;
+	...;
 }
 ```
 
@@ -172,10 +189,11 @@ a {
 By floating the anchors we cause the list items to expand to contain their floated children.
 Now we add a background image to the <a>. Note that the image has a gradient and transparency.
 
-```
+```css
 a {
-	...
 	background: #f9eaa9 url(i/off_bg.gif) repeat-x top left;
+	...;
+}
 ```
 
 Note what happened to the background graphic we placed in the `<ul>`. It is hidden behind the (now not transparent) anchors.
@@ -196,7 +214,8 @@ Recall that the padding on the bottom of the anchor tags was 4px. Let's increase
 
 ```css
 a:hover {
-	... padding-bottom:5px;
+	padding-bottom: 5px;
+	...;
 }
 ```
 
@@ -209,20 +228,12 @@ Create a second selector to highlight one of the anchors.
 ```css
 a:hover,
 .t-cuisines a {
-	...;
+	background: #fff url(i/on_bg.gif) repeat-x top left;
+	padding-bottom: 5px;
 }
 ```
 
 Note that when you use two selectors they must be separated by a comma.
-
-Many prefer to keep the multiple selectors on separate lines like so:
-
-```css
-a:hover,
-.t-cuisines a {
-	...;
-}
-```
 
 Now, if we add an id to the body tag we can edit the selector to make it page specific.
 
