@@ -3,6 +3,7 @@
 ## Homework
 
 1. Install [node js](https://nodejs.org/)
+1. Install [Git](https://git-scm.com/)
 1. Complete last week's assignment - add a popover to a web page
 
 <!-- 1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples, write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate. -->
