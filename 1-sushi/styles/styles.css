@@ -105,6 +105,11 @@ aside ul {
 	padding: 0;
 }
 
+.p-review .t-review a {
+    color: #600;
+    background: #f0dfb4;
+ }
+
 @media print {
 	* {
 		display: none;
