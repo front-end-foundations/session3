@@ -615,14 +615,23 @@ Note the target attribute for the anchor tag. We have also used the class `map` 
 ```html
 <script>
 	var mapClicker = document.querySelector('.map')
-
-	mapClicker.addEventListener('click', show)
-	// document.addEventListener('click', show)
-
-	function show(){
-		event.preventDefault()
-	};
+	mapClicker.addEventListener('click', function(){
+		event.preventDefault();
+	})
 </script>
+```
+
+Update the script to call a function:
+
+```js
+var mapClicker = document.querySelector('.map');
+
+mapClicker.addEventListener('click', show);
+// document.addEventListener('click', show)
+
+function show() {
+	event.preventDefault();
+}
 ```
 
 Add to the bottom of the html (but before `<script>`):
@@ -632,6 +641,8 @@ Add to the bottom of the html (but before `<script>`):
 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.821674756671!2d-73.97492268461596!3d40.67789794763805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25ba8edab126b%3A0xfaa0551477e2ec72!2sGeido!5e0!3m2!1sen!2sus!4v1490213487125" width="300" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
 ```
+
+Format the popover:
 
 ```css
 .popover {
@@ -648,7 +659,7 @@ Add to the bottom of the html (but before `<script>`):
 }
 ```
 
-Uncomment `display: none` so the map stays hidden.
+Uncomment `display: none` so the map stays hidden after formatting.
 
 Add a new rule to the css:
 
@@ -660,17 +671,15 @@ Add a new rule to the css:
 
 Edit the script:
 
-```html
-<script>
-	var mapClicker = document.querySelector('.map')
-	var popOver = document.querySelector('.popover')
-	mapClicker.addEventListener('click', show)
+```js
+var mapClicker = document.querySelector('.map');
+var popOver = document.querySelector('.popover');
+mapClicker.addEventListener('click', show);
 
-	function show(e){
-		popOver.classList.toggle('showme')
-		e.preventDefault()
-	};
-</script>
+function show(e) {
+	popOver.classList.toggle('showme');
+	e.preventDefault();
+}
 ```
 
 ### DOM Scripting - Adding a close button
@@ -682,6 +691,14 @@ Edit the script:
 ```html
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 ```
+
+Use it once to add an icon to the web site link:
+
+```html
+<li><a href="#"><i class="fa fa-external-link-square-alt"></i>Web site</a></li>
+```
+
+Use the inspector to examine it.
 
 1. [Examine](http://fontawesome.io/icons/) looks like `fa-times` will work.
 

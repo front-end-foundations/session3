@@ -8,7 +8,7 @@
 // document.title = 123;
 // console.log(document.body);
 
-// find number of the H1 tag in the header in the list
+// find the index number of the H1 tag in the header in the list
 // console.log(document.all);
 
 // console.log(document.all[19]);
@@ -25,7 +25,7 @@
 // wrapper.textContent = 'Hello';
 // wrapper.style.borderBottom = 'solid 30px red';
 
-// getElementsByClassName //
+// GETELEMENTSBYCLASSNAME //
 // var nav = document.getElementsByClassName('nav');
 // console.log(nav);
 
@@ -58,7 +58,7 @@
 // Note the class of 'map' and Google map link to the map anchor tag in the sidebar
 // var mapLink = document.querySelector('.map');
 // mapLink.style.borderBottom = 'solid 8px red';
-// document.querySelector('.map').style.borderBottom = 'solid 8px red';
+// document.querySelector('.map').style.borderBottom = 'solid 8px green';
 
 // EVENTS //
 
@@ -93,9 +93,9 @@
 // console.log(e.clientX);
 // console.log(e.clientY);
 // LOCAL COORDS
-// console.log(e.offsetX);
-// console.log(e.offsetY);
-// event.preventDefault();
+// 	console.log(e.offsetX);
+// 	console.log(e.offsetY);
+// 	event.preventDefault();
 // }
 
 // DYNAMICALLY CREATE AN ELEMENT //s
