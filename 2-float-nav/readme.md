@@ -1,12 +1,12 @@
 ## Styling a List with Floats
 
-<img src="Tabs/tabs-image.jpg">
+<img src="tabs-image.jpg">
 
 Review the navigation from last week.
 
 In this exercise we will focus on list styling and navigation but instead of using `display: inline` or `display: inline-block` to create horizontal navigation we will use floats.
 
-<!-- ## Demo in Sublime
+## Review in Sublime
 
 * Install [package control](https://packagecontrol.io)
 
@@ -16,18 +16,18 @@ In this exercise we will focus on list styling and navigation but instead of usi
 
 Using emmet -->
 
-<!-- ```sh
+```sh
 !
 
 ul>li*4>a[href="#"]{link}
 
 nav>ul>li.t-cuisines*4>a[href="cuisines.html"]{cuisines}
-``` -->
+```
 
 Create an HTML file and save it as `cuisines.html` into the `Tabs` folder.
 
-<!-- * duplicate lines `cmd-d` and
-* use multiple cursors `cmd` to complete the classes and links so you end up with: -->
+* duplicate lines `cmd-d` and
+* use multiple cursors (`cmd`) to complete the classes and links so you end up with:
 
 ```html
 <!DOCTYPE html>
