@@ -427,6 +427,12 @@ Expand the tabs on small screens:
 }
 ```
 
+Don't forget the meta tag:
+
+```html
+<meta name="viewport" content="width=device-width">
+```
+
 Change order (sample only - not good UX):
 
 ```css
@@ -546,7 +552,7 @@ function makeInactive() {
 }
 ```
 
-Add some variables with content.
+Add some variables with content. It is usually a good idea to declare your variables at the top of the script so that they are available to the code that comes after.
 
 ```js
 var cuisines =
@@ -583,20 +589,7 @@ Style it using CSS:
 }
 ```
 
-Since we are not usings multiple html pages edit the html:
-
-```html
-	<nav>
-		<ul id="nav">
-			<li class="t-cuisines"><a class="active" href="cuisines">Cuisines</a></li>
-			<li class="t-chefs"><a href="chefs">Chefs</a></li>
-			<li class="t-reviews"><a href="reviews">Reviews</a></li>
-			<li class="t-delivery"><a href="delivery">Delivery</a></li>
-		</ul>
-	</nav>
-```
-
-Note that we can access the value of the href by using `this.href`:
+Note that we can access the value of the link's href by using `this.href`:
 
 ```js
 function makeActive() {
@@ -624,3 +617,5 @@ function makeActive() {
 	event.preventDefault();
 }
 ```
+
+In JavaScript parlance this is something akin to `routing`.
