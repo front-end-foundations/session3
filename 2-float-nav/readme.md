@@ -618,4 +618,10 @@ function makeActive() {
 }
 ```
 
-In JavaScript parlance this is something akin to `routing`.
+In JavaScript parlance this is something akin to what is known as `routing`, but its not quite there yet.
+
+One of the big problems with what we've built might be termed _maintaining state_. If you refresh the browser while you are on the Reviews tab it reinitializes the page to show the Cuisines tab.
+
+To correct this we need to change the URL shown in the address bar of the browser to something unique. We would then use that information to make sure the appropriate content is shown.
+
+
