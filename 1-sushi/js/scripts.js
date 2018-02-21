@@ -83,43 +83,43 @@
 
 // NOTE - event is often shortened to (e)
 // function buttonClick(e) {
-// console.log('Map link clicked');
-// console.log(e);
+	// console.log('Map link clicked');
+	// console.log(e);
 // console.log(e.target);
-// console.log(e.type);
-// console.log(e.target.className);
+	// console.log(e.type);
+	// console.log(e.target.className);
 // console.log(e.target.classList);
 // CLIENT COORDS
 // console.log(e.clientX);
 // console.log(e.clientY);
 // LOCAL COORDS
-// 	console.log(e.offsetX);
-// 	console.log(e.offsetY);
-// 	event.preventDefault();
+	// console.log(e.offsetX);
+	// console.log(e.offsetY);
+// event.preventDefault();
 // }
 
 // DYNAMICALLY CREATE AN ELEMENT //s
 
 // // Create a div and then look at it in the console
-// var newDiv = document.createElement('div');
+var newDiv = document.createElement('div');
 
 // // Store a reference to the H1
-// var headerOne = document.querySelector('header h1');
+var headerOne = document.querySelector('header h1');
 
 // // Add the new div to the document
-// headerOne.appendChild(newDiv);
+headerOne.appendChild(newDiv);
 
 // // Create text node
-// var newDivText = document.createTextNode('Hello World');
+var newDivText = document.createTextNode('Hello World');
 
 // // Add text to div
-// newDiv.appendChild(newDivText);
+newDiv.appendChild(newDivText);
 
-// newDiv.style.fontSize = '30px';
-// newDiv.style.color = 'red';
+newDiv.style.fontSize = '30px';
+newDiv.style.color = 'red';
 
 // // Add class
-// newDiv.className = 'popover';
+newDiv.className = 'popover';
 
 // ADD the below to styles.css?
 
