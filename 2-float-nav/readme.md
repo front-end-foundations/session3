@@ -265,6 +265,10 @@ We are going to create a second HTML page shortly so let's copy our CSS into an 
 
 Note that because we used a new directory, the paths to the images are no longer correct. Correct them now.
 
+## Multiple HTML Pages
+
+Let's create a new HTML page so we can carry our navigation forward using CSS.
+
 Save a new copy of the HTML page as chefs.html and edit the ID:
 
 ```html
@@ -433,7 +437,7 @@ Don't forget the meta tag:
 <meta name="viewport" content="width=device-width">
 ```
 
-Change order (sample only - not good UX):
+Change order (demo only - not good UX):
 
 ```css
 #p-chefs .t-chefs {
