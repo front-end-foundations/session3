@@ -612,7 +612,7 @@ Now when you navigate between the two pages you should see a friendly reminder o
 
 Images and any other externally linked asset increases the time it takes to download and render your page. It is considered a best practice to minimize the number of images whereever possible so let's remove as many as we can.
 
-Aside: [Hex color vs. RGB vs. RGBA](https://www.w3schools.com/colors/colors_converter.asp)
+<!-- Aside: [Hex color vs. RGB vs. RGBA](https://www.w3schools.com/colors/colors_converter.asp) -->
 
 * [Intro to gradients in css](https://css-tricks.com/css3-gradients/) has more information than you'll ever need
 * [Gradient editor](http://www.colorzilla.com/gradient-editor/) - the tool I used to create the gradients below
@@ -632,11 +632,11 @@ a {
 	float: left;
 	/*background: #f9eaa9 url(i/off_bg.gif) repeat-x top left;*/
 	background-image: linear-gradient(
-		to bottom,
-		rgba(255, 236, 165, 1) 0%,
-		rgba(232, 213, 149, 1) 6%,
-		rgba(253, 233, 162, 1) 94%,
-		rgba(253, 233, 162, 1) 100%
+	  to bottom,
+    rgba(255, 236, 165, 1) 0%,
+    rgba(232, 213, 149, 1) 6%,
+    rgba(253, 233, 162, 1) 94%,
+    rgba(253, 233, 162, 1) 100%
 	);
 }
 ```
@@ -646,14 +646,14 @@ Highlighted (eg. hovered) state:
 ```css
 a:hover,
 #p-cuisines .t-cuisines a {
-	/*background: #fff url(i/on_bg.gif) repeat-x top left;*/
-	background-image: linear-gradient(
-		to bottom,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(224, 226, 240, 1) 6%,
-		rgba(254, 254, 254, 1) 53%
-	);
-	padding-bottom: 5px;
+  /*background: #fff url(i/on_bg.gif) repeat-x top left;*/
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(224, 226, 240, 1) 6%,
+    rgba(254, 254, 254, 1) 53%
+  );
+  padding-bottom: 5px;
 }
 ```
 
@@ -661,13 +661,13 @@ Underline:
 
 ```css
 .nav {
-	margin: 0;
-	padding: 10px 0 0 46px;
-	list-style: none;
-	float: left;
-	width: 100%;
-	/*background: #ffcb2d url(i/nav_bg.gif) repeat-x bottom left;*/
-	background-image: linear-gradient(to bottom, #ffcb2d 0%, #ffcb2d 96%, #9b8748 100%);
+  margin: 0;
+  padding: 10px 0 0 46px;
+  list-style: none;
+  float: left;
+  width: 100%;
+  /*background: #ffcb2d url(i/nav_bg.gif) repeat-x bottom left;*/
+  background-image: linear-gradient(to bottom, #ffcb2d 0%, #ffcb2d 96%, #9b8748 100%);
 }
 ```
 
@@ -681,26 +681,26 @@ Add `display: flex` to the nav:
 
 ```css
 .nav {
-	display: flex;
-	...
+  display: flex;
+  ...
 }
 
 li {
-	/*float: left;*/
-	display: flex;
+  /*float: left;*/
+  display: flex;
 }
 ```
 
 ```css
 a {
-	/* border-bottom: none; */
-	...
+  /* border-bottom: none; */
+  ...
 }
 a:hover,
 #p-cuisines .t-cuisines a,
 #p-chefs .t-chefs a {
-	...
-	border-bottom: none;
+  ...
+  border-bottom: none;
 }
 ```
 
@@ -708,12 +708,12 @@ Expand the tabs on small screens:
 
 ```css
 @media (max-width: 768px) {
-	li {
-		flex-grow: 1;
-	}
-	a {
-		flex-grow: 1;
-	}
+  li {
+    flex-grow: 1;
+  }
+  a {
+    flex-grow: 1;
+  }
 }
 ```
 
@@ -728,7 +728,7 @@ Flex order property (demo only):
 ```css
 ...
 .nav .t-cuisines {
-	order: 3;
+  order: 3;
 }
 ```
 
@@ -747,7 +747,7 @@ and:
 ```css
 a:hover,
 a.active {
-	...
+  ...
 }
 ```
 
@@ -755,8 +755,8 @@ Create a script tag at the bottom of the document and add:
 
 ```html
 <script>
-	var tabs = document.querySelector('.nav a');
-	console.log(tabs);
+  var tabs = document.querySelector('.nav a');
+  console.log(tabs);
 </script>
 ```
 
@@ -772,12 +772,12 @@ Now we need to attach an eventListener to each of the tabs:
 ```js
 var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(function(tab) {
-	tab.addEventListener('click', makeActive);
+  tab.addEventListener('click', makeActive);
 });
 
 function makeActive() {
-	console.log(this);
-	event.preventDefault();
+  console.log(this);
+  event.preventDefault();
 }
 ```
 
@@ -788,8 +788,8 @@ var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
-	console.log(this);
-	event.preventDefault();
+  console.log(this);
+  event.preventDefault();
 }
 ```
 
@@ -802,8 +802,8 @@ var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
-	this.classList.add('active');
-	event.preventDefault();
+  this.classList.add('active');
+  event.preventDefault();
 }
 ```
 
@@ -814,9 +814,9 @@ var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
-	tabs.forEach(tab => tab.classList.remove('active'));
-	this.classList.add('active');
-	event.preventDefault();
+  tabs.forEach(tab => tab.classList.remove('active'));
+  this.classList.add('active');
+  event.preventDefault();
 }
 ```
 
@@ -827,13 +827,13 @@ var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
-	makeInactive();
-	this.classList.add('active');
-	event.preventDefault();
+  makeInactive();
+  this.classList.add('active');
+  event.preventDefault();
 }
 
 function makeInactive() {
-	tabs.forEach(tab => tab.classList.remove('active'));
+  tabs.forEach(tab => tab.classList.remove('active'));
 }
 ```
 
@@ -841,16 +841,16 @@ Add some variables with content. It is usually a good idea to declare your varia
 
 ```js
 var cuisines =
-	'Cuisines. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis.';
+  'Cuisines. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis.';
 
 var chefs =
-	'Chefs. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.';
+  'Chefs. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.';
 
 var reviews =
-	'Reviews. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis.';
+  'Reviews. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis.';
 
 var delivery =
-	'Delivery. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.';
+  'Delivery. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.';
 ```
 
 Create an empty `div` with a class of `content` in the html:
@@ -870,7 +870,7 @@ Style it using CSS:
 
 ```css
 .content {
-	padding: 1rem;
+  padding: 1rem;
 }
 ```
 
@@ -878,8 +878,8 @@ Note that we can access the value of the link's href by using `this.href`:
 
 ```js
 function makeActive() {
-	console.log(this.href)
-	...
+  console.log(this.href)
+  ...
 }
 ```
 
@@ -887,19 +887,19 @@ So let's make the content of the `.content` div depend on the link's href. We wi
 
 ```js
 function makeActive() {
-	console.log(this.href);
-	makeInactive();
-	this.classList.add('active');
-	if (this.href.includes('cuisines')) {
-		contentPara.innerHTML = cuisines;
-	} else if (this.href.includes('chefs')) {
-		contentPara.innerHTML = chefs;
-	} else if (this.href.includes('reviews')) {
-		contentPara.innerHTML = reviews;
-	} else if (this.href.includes('delivery')) {
-		contentPara.innerHTML = delivery;
-	}
-	event.preventDefault();
+  console.log(this.href);
+  makeInactive();
+  this.classList.add('active');
+  if (this.href.includes('cuisines')) {
+    contentPara.innerHTML = cuisines;
+  } else if (this.href.includes('chefs')) {
+    contentPara.innerHTML = chefs;
+  } else if (this.href.includes('reviews')) {
+    contentPara.innerHTML = reviews;
+  } else if (this.href.includes('delivery')) {
+    contentPara.innerHTML = delivery;
+  }
+  event.preventDefault();
 }
 ```
 
