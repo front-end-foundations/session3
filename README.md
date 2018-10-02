@@ -909,57 +909,16 @@ One of the big problems with what we've built might be termed _maintaining state
 
 To correct this we need to change the URL shown in the address bar of the browser to something unique. We would then use that information to make sure the appropriate content is shown.
 
-## III - Using flexbox to create a Navbar
+## III - Using Flexbox to Create a Navbar
+
+<img src="hero-1.png">
 
 FlexBox:
 
 * CSS Flexible Box Layout Module
 * A simple guide to the various CSS properties on [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
-### A Simple Flex Nav
-
-<img src="hero-1.png">
-
 We will use [Font Awesome](http://fontawesome.io/) for the icons in this exercise.
-
-<!-- ```html
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Display: flex nav</title>
-</head>
-
-<body>
-
-  <header class="site-header">
-
-    <a href="#0" class="logo">Logo</a>
-
-    <nav class="site-nav">
-      <ul>
-        <li class="active"><a href="recipes.html">Recipes</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="delivery.html">Delivery</a></li>
-      </ul>
-    </nav>
-
-    <div class="account-actions">
-      <div class="account-dropdown">
-         Gear
-        <ul>
-          <li>Your Account</li>
-        </ul>
-      </div>
-      <a href="#0" class="sign-out-link">Sign Out</a>
-    </div>
-
-  </header>
-
-</body>
-</html>
-
-``` -->
 
 In `index.html`:
 
