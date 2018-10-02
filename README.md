@@ -326,7 +326,7 @@ Set the anchor tags to use display flex:
 
 ## II - Using floats to create a nav bar
 
-## Styling a List with Floats
+
 
 <img src="tabs-image.jpg">
 
@@ -379,7 +379,7 @@ Create an HTML file and save it as `cuisines.html` into the `float-nav` folder.
 <body>
 
 <nav>
-	<ul id="nav">
+	<ul class="nav">
 		<li class="t-cuisines"><a href="cuisines.html">Cuisines</a></li>
 		<li class="t-chefs"><a href="chefs.html">Chefs</a></li>
 		<li class="t-reviews"><a href="reviews.html">Reviews</a></li>
@@ -400,7 +400,7 @@ body {
 	margin: 0;
 	font-family: 'Lucida Grande', sans-serif;
 }
-#nav {
+.nav {
 	margin: 0;
 	padding: 10px 0 0 46px;
 	background-color: #ffcb2d;
@@ -410,7 +410,7 @@ body {
 Firstly, remove the bullets from the `<ul>`:
 
 ```css
-#nav {
+.nav {
 	list-style: none;
 	...;
 }
@@ -438,7 +438,7 @@ For our current example let's use the second FNE method.
 Try adding a float to the 'collapsed' element:
 
 ```css
-#nav {
+.nav {
 	float: left;
 	...;
 }
@@ -449,7 +449,7 @@ Note that the width has changed. Boxes are 100% width by default (they stretch t
 Since we want the `<ul>` to extend the width of the window let's fix the width.
 
 ```css
-#nav {
+.nav {
 	width: 100%;
 	...;
 }
@@ -462,7 +462,7 @@ Review the [background image CSS property](https://www.w3schools.com/cssref/pr_b
 Extend the background property to add a background graphic to the `<ul>`.
 
 ```css
-#nav {
+.nav {
 	background-image: url(i/nav_bg.gif);
 	...;
 }
@@ -473,7 +473,7 @@ Aside: demo the background property using `pattern.gif`.
 Add positioning to the background.
 
 ```css
-#nav {
+.nav {
 	background-repeat: repeat-x;
 	background-position: bottom left;
 	...;
@@ -483,7 +483,7 @@ Add positioning to the background.
 Note: using the `background` shortcut we would write:
 
 ```css
-#nav {
+.nav {
 	background: #ffcb2d url(i/nav_bg.gif) repeat-x bottom left;
 	...;
 }
@@ -593,7 +593,9 @@ We are going to create a second HTML page shortly so let's copy our CSS into an 
 
 Note that because we used a new directory, the paths to the images are no longer correct. Correct them now.
 
-## Multiple HTML Pages
+## Demo: Multiple HTML Pages
+
+* There is a demo of this in the `Tabs > demo` directory.
 
 Let's create a new HTML page so we can carry our navigation forward using CSS.
 
@@ -614,8 +616,6 @@ a:hover,
 ```
 
 Now when you navigate between the two pages you should see a friendly reminder of what page you are on courtesy of the CSS file.
-
-* There is a demo of this in the `Tabs > demo` directory.
 
 ### Removing the on- off- images
 
@@ -669,7 +669,7 @@ a:hover,
 Underline:
 
 ```css
-#nav {
+.nav {
 	margin: 0;
 	padding: 10px 0 0 46px;
 	list-style: none;
@@ -684,13 +684,14 @@ Underline:
 
 A good [reference](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) cheat sheet
 
+First - comment out the float properties in the CSS.
+
+Add `display: flex` to the nav:
+
 ```css
-#nav {
+.nav {
 	display: flex;
-	margin: 0;
-	padding: 10px 0 0 46px;
-	list-style: none;
-	background-image: linear-gradient(to bottom, #ffcb2d 0%, #ffcb2d 96%, #9b8748 100%);
+	...
 }
 
 li {
@@ -700,49 +701,15 @@ li {
 ```
 
 ```css
-body {
-	margin: 0;
-	font-family: 'Lucida Grande', sans-serif;
-}
-#nav {
-	/*float: left;*/
-	display: flex;
-	margin: 0;
-	padding: 10px 0 0 46px;
-	list-style: none;
-	background-image: linear-gradient(to bottom, #ffcb2d 0%, #ffcb2d 96%, #9b8748 100%);
-}
-li {
-	/*float: left;*/
-	display: flex;
-}
 a {
-	text-decoration: none;
-	color: #333;
-	padding: 4px 8px;
-	border: 1px solid #9b8748;
-	margin: 0 6px 0 0;
-	/*border-bottom: none;*/
-	/*float: left;*/
-	background-image: linear-gradient(
-		to bottom,
-		rgba(255, 236, 165, 1) 0%,
-		rgba(232, 213, 149, 1) 6%,
-		rgba(253, 233, 162, 1) 94%,
-		rgba(253, 233, 162, 1) 100%
-	);
+	/* border-bottom: none; */
+	...
 }
 a:hover,
 #p-cuisines .t-cuisines a,
 #p-chefs .t-chefs a {
+	...
 	border-bottom: none;
-	background-image: linear-gradient(
-		to bottom,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(224, 226, 240, 1) 6%,
-		rgba(254, 254, 254, 1) 53%
-	);
-	/*padding-bottom: 5px;*/
 }
 ```
 
@@ -765,11 +732,12 @@ Don't forget the meta tag:
 <meta name="viewport" content="width=device-width">
 ```
 
-Change order (demo only - not good UX):
+Flex order property (demo only):
 
 ```css
-#p-chefs .t-chefs {
-	order: -1;
+...
+.nav .t-cuisines {
+	order: 3;
 }
 ```
 
@@ -788,13 +756,7 @@ and:
 ```css
 a:hover,
 a.active {
-	border-bottom: none;
-	background-image: linear-gradient(
-		to bottom,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(224, 226, 240, 1) 6%,
-		rgba(254, 254, 254, 1) 53%
-	);
+	...
 }
 ```
 
@@ -802,7 +764,7 @@ Create a script tag at the bottom of the document and add:
 
 ```html
 <script>
-	var tabs = document.querySelector('#nav a');
+	var tabs = document.querySelector('.nav a');
 	console.log(tabs);
 </script>
 ```
@@ -810,14 +772,14 @@ Create a script tag at the bottom of the document and add:
 We need to use `querySelectorAll` because we are gathering more than one item:
 
 ```js
-var tabs = document.querySelectorAll('#nav a');
+var tabs = document.querySelectorAll('.nav a');
 console.log(tabs);
 ```
 
 Now we need to attach an eventListener to each of the tabs:
 
 ```js
-var tabs = document.querySelectorAll('#nav a');
+var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(function(tab) {
 	tab.addEventListener('click', makeActive);
 });
@@ -831,7 +793,7 @@ function makeActive() {
 Using an Arrow function shortcut (for anonymous functions):
 
 ```js
-var tabs = document.querySelectorAll('#nav a');
+var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
@@ -845,7 +807,7 @@ Note the use of `this` to refer to the thing clicked on. `This` is very powerful
 Let's use `classList` again to add a class to the link we click on:
 
 ```js
-var tabs = document.querySelectorAll('#nav a');
+var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
@@ -857,7 +819,7 @@ function makeActive() {
 Lets remove the class from all tabs before we add it so that only one is active at a time:
 
 ```js
-var tabs = document.querySelectorAll('#nav a');
+var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
@@ -867,10 +829,10 @@ function makeActive() {
 }
 ```
 
-We can separate the removal out into its own function and then call that function (`makeInactive();`):
+We can separate the class removal out into its own function and then call that function (`makeInactive();`):
 
 ```js
-var tabs = document.querySelectorAll('#nav a');
+var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
