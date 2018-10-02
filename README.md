@@ -1,45 +1,22 @@
-# Session Three
-
-## Homework
-
-1. Install [node js](https://nodejs.org/)
-1. Install [Git](https://git-scm.com/)
-1. See how far you can get on [Flexbox Froggy](http://flexboxfroggy.com/)
-1. Complete last week's assignment - add a popover to a web page
-
-<!-- 1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples, write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate. -->
-
-## Reading
-
-## I - Sushi continued
-
-Use DOM scripting to create a popover. See the readme file in the `1-sushi` directory
-
-## II - Using floats to create a nav bar
-
-See the readme file in the `2-float-nav` directory
-
-## III - Using flexbox to create a nav bar
-
-See the readme file in the `3-flex-nav` directory
-
-### Notes
-# Session Three
+# III Floats and Flexbox
 
 ## Homework
 
 1. See how far you can get on [Flexbox Froggy](http://flexboxfroggy.com/)
 1. Complete last week's assignment - add a popover to a web page
+1. Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, WIndows users can use Git Bash.)
 
 <!-- 1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples, write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate. -->
 
 ## Reading
 
-## I - Sushi continued
+* HTML5 and CSS3: Building Responsive Websites, Module 2 - chapters 1 to 4
 
 ## Terminal
 
-There are many good reasons to aquire a basic understanding of the command line terminal. In the class we will use the [Terminal](https://support.apple.com/guide/terminal/welcome/mac) app for GIT and GITHUB as well as for Node Package Manager (NPM).
+[Real developers know how to use command line. – Assholes](https://gomakethings.com/you-dont-need-to-know-command-line-to-be-a-good-developer/)
+
+There are many good reasons to aquire a basic understanding of the command line terminal. In this class we will use the [Terminal](https://support.apple.com/guide/terminal/welcome/mac) app for GIT and GITHUB as well as for Node Package Manager (NPM).
 
 The Windows equivalent to Mac's Terminal app is [Powershell](https://docs.microsoft.com/en-us/powershell/) but there are important differences and you WILL NOT be able to run Python as shown below.
 
@@ -70,6 +47,12 @@ $ dir C:\windows
 $ chdir C:\windows
 ```
 
+If you have node installed you should be able to run JavaScript on the command line.
+
+```sh
+node 12+12
+```
+
 On a mac you can `cd` to a folder via drag and drop or by copying and pasting a folder into the terminal.
 
 cd into today's folder and enter the following command into Terminal:
@@ -80,7 +63,7 @@ $ python -m SimpleHTTPServer 9000
 
 Access `localhost:8000` in Chrome. Note the directory listing and the default index.html.
 
-## Sushi - Homework
+## I - Sushi Homework
 
 ### Review
 
