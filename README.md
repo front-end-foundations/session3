@@ -920,11 +920,9 @@ FlexBox:
 
 <img src="hero-1.png">
 
-[Font Awesome](http://fontawesome.io/)
+We will use [Font Awesome](http://fontawesome.io/) for the icons in this exercise.
 
-Create the HTML:
-
-```html
+<!-- ```html
 <!doctype html>
 <html>
 <head>
@@ -961,27 +959,29 @@ Create the HTML:
 </body>
 </html>
 
-```
+``` -->
+
+In `index.html`:
 
 ```
-<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
 ```
 
-Logo:
+For the logo:
 
-```
-<i class="fa fa-bullseye fa-3x"></i>
+```html
+<a href="#0" class="logo"><i class="fa fa-bullseye fa-3x"></i></a>
 ```
 
 Gear:
 
-```
+```html
 <i class="fa fa-gear"></i>
 ```
 
 A font stack that ensures the [device's default font](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/) will be used (native font):
 
-```
+```css
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -995,17 +995,29 @@ header {
   align-items: center;
   padding:0.5rem;
 }
+```
 
+Hide the account dropdown:
+
+```css
 .account-dropdown ul {
     display: none;
 }
+```
 
+Format the logo:
+
+```css
 .logo {
   text-decoration: none;
   color: white;
   padding: 10px;
 }
+```
 
+Format the unordered list and links:
+
+```css
 .site-nav ul {
   list-style: none;
   display: flex;
@@ -1020,13 +1032,21 @@ header {
   padding: 20px;
   display: inline-block;
 }
+```
 
+Set up an active state:
+
+```css
 .site-nav .active a {
   font-weight: bold;
   color: #62DEBE;
   background: #444;
 }
+```
 
+Note the margin left auto setting for the actions section:
+
+```css
 .account-actions {
   margin-left: auto;
   display: flex;
@@ -1043,10 +1063,15 @@ header {
 }
 ```
 
-[The responsive meta tag](https://css-tricks.com/snippets/html/responsive-meta-tag/)
+Add [the responsive meta tag](https://css-tricks.com/snippets/html/responsive-meta-tag/):
+
+```html
+<meta name="viewport" content="width=device-width">
+```
+
+In a media query, turn wrapping on and set the order of the site nav to second place to improve the layout:
 
 ```css
-
 @media (max-width: 600px) {
   header {
     flex-wrap: wrap;
@@ -1059,7 +1084,7 @@ header {
 }
 ```
 
-Refactor CSS for `text-decoration`, `text-transform` ...
+<!-- Refactor CSS for `text-decoration`, `text-transform` ... -->
 
 ### Interactivity
 
@@ -1082,7 +1107,6 @@ function showOptions(){
 Note - requires corresponding CSS (see `index-done.html`)
 
 ```css
-
 .active {
   display: flex !important;
 }
@@ -1105,7 +1129,8 @@ Note - requires corresponding CSS (see `index-done.html`)
 }
 ```
 
-Part TWO - add active class to the navigation
+Add an active class to the navigation.
+
 Introduces for loops and 'this' 
 
 ```js
