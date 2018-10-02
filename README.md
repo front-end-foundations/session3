@@ -918,14 +918,14 @@ One of the big problems with what we've built might be termed _maintaining state
 
 To correct this we need to change the URL shown in the address bar of the browser to something unique. We would then use that information to make sure the appropriate content is shown.
 
-## III - Using flexbox to create a nav bar
+## III - Using flexbox to create a Navbar
 
-## FlexBox
+FlexBox:
+
 * CSS Flexible Box Layout Module
 * A simple guide to the various CSS properties on [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* Try https://www.w3schools.com/css/css3_flexbox.asp
 
-### A simple Flex Nav
+### A Simple Flex Nav
 
 <img src="hero-1.png">
 
