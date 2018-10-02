@@ -233,8 +233,8 @@ Note the `cursor` property. Here is a [list of available cursors](https://www.w3
 ```css
 .popover .closer {
 	...
-	text-decoration: none;
-	background-color: #fff;
+  text-decoration: none;
+  background-color: #fff;
   padding: 0.25rem;
   border: 2px solid #600;
   border-radius: 50%;
