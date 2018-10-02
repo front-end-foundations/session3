@@ -48,7 +48,7 @@ $ dir C:\windows
 $ chdir C:\windows
 ```
 
-Note: on Windows: if you have Git installed you probably have `git-bash` on your computer. You can use that to run unix style commands e.g. `ls` instead of `dir`.
+Note: on Windows: if you have Git installed you probably have `git-bash` on your computer. You can use that to run unix style commands (e.g. `ls` instead of `dir`).
 
 If you have node installed you should be able to run JavaScript on the command line.
 
@@ -57,8 +57,8 @@ $ node --version
 $ npm --version
 $ git --version
 $ node
-$ 12+12
-$ .exit // or control-c
+$ > 12+12
+$ > .exit // or control-c
 ```
 
 Mac only: `cd` into today's folder and enter the following command into Terminal:
@@ -67,7 +67,7 @@ Mac only: `cd` into today's folder and enter the following command into Terminal
 $ python -m SimpleHTTPServer 9000
 ```
 
-Access `localhost:8000` in Chrome. Note the directory listing and the default index.html.
+Access `localhost:8000` in Chrome. Note the directory listing. `ctrl-c` to quit the process.
 
 ## I - Sushi Homework
 
@@ -302,7 +302,7 @@ Note that there is no possibility of animating this because we are using `displa
 
 ### Flexbox for the Nav
 
-[What is Flexbox]?(https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
+[What is Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)?
 
 * flex is a _display_ attribute like `block, inline, block-inline`
 * do not confuse it with _positioning_ which we have looked at for absolute, relative and fixed positioning
@@ -324,13 +324,13 @@ Set the anchor tags to use display flex:
 }
 ```
 
-## II - Using floats to create a nav bar
+## II - Using Floats to Create a Navbar
 
 <img src="tabs-image.jpg">
 
 In this exercise we will focus on list styling and navigation but instead of using `display: inline-block` to create horizontal navigation we will use floats and the flexbox.
 
-## Sublime Text - Aside
+<!-- ## Sublime Text - Aside
 
 To create the html for this exercise I would normally use Emmet.
 
@@ -354,14 +354,14 @@ or:
 nav>ul>li.t-cuisines*4>a[href="cuisines.html"]{cuisines}
 ```
 
-And then edit the file.
+And then edit the file. -->
 
-## Create the HTML
+### Create the HTML
 
 Create an HTML file and save it as `cuisines.html` into the `float-nav` folder.
 
-* duplicate lines `cmd-d` and
-* use multiple cursors (`cmd`) to complete the classes and links so you end up with:
+<!-- * duplicate lines `cmd-d` and
+* use multiple cursors (`cmd`) to complete the classes and links so you end up with: -->
 
 ```html
 <!DOCTYPE html>
@@ -402,19 +402,11 @@ body {
 	margin: 0;
 	padding: 10px 0 0 46px;
 	background-color: #ffcb2d;
-}
-```
-
-Firstly, remove the bullets from the `<ul>`:
-
-```css
-.nav {
 	list-style: none;
-	...;
 }
 ```
 
-Then float the list items to the left (after removing the possibility that any margins or padding might be applied).
+Then float the list items to the left:
 
 ```css
 li {
@@ -426,12 +418,11 @@ Notice what happened to the `<ul>`'s height. The `<li>` items no longer force th
 
 There are a number of methods in use to prevent this:
 
-* Apply CSS overflow: auto; to the collapsed element
 * float a float (or "FNE" - float nearly everything) - apply a float to the collapsed element
-* the clearfix hack - this entails creating a utility class and will be covered later
+* the 'clearfix hack' - entails creating a utility class and will be covered later
 * adding a clearing div - this entails adding an HTML element to the page and is discouraged
 
-For our current example let's use the second FNE method.
+For our current example let's use the second, FNE method.
 
 Try adding a float to the 'collapsed' element:
 
@@ -455,7 +446,9 @@ Since we want the `<ul>` to extend the width of the window let's fix the width.
 
 _When you float an element you almost always have to specify a width._
 
-Review the [background image CSS property](https://www.w3schools.com/cssref/pr_background-image.asp). Try adding and fun background color from [here](https://www.impressivewebs.com/weird-css-color-names/) and then `background-repeat: repeat-y;` and `background-position: center center;`.
+Review the [background image CSS property](https://www.w3schools.com/cssref/pr_background-image.asp). 
+
+<!-- Try adding and fun background color from [here](https://www.impressivewebs.com/weird-css-color-names/) and then `background-repeat: repeat-y;` and `background-position: center center;`. -->
 
 Extend the background property to add a background graphic to the `<ul>`.
 
@@ -466,7 +459,7 @@ Extend the background property to add a background graphic to the `<ul>`.
 }
 ```
 
-Aside: demo the background property using `pattern.gif`.
+<!-- Aside: demo the background property using `pattern.gif`. -->
 
 Add positioning to the background.
 
@@ -474,7 +467,7 @@ Add positioning to the background.
 .nav {
 	background-repeat: repeat-x;
 	background-position: bottom left;
-	...;
+	...
 }
 ```
 
@@ -483,7 +476,7 @@ Note: using the `background` shortcut we would write:
 ```css
 .nav {
 	background: #ffcb2d url(i/nav_bg.gif) repeat-x bottom left;
-	...;
+	...
 }
 ```
 
