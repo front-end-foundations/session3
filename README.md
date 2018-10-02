@@ -4,13 +4,15 @@
 
 1. See how far you can get on [Flexbox Froggy](http://flexboxfroggy.com/)
 1. Complete last week's assignment - add a popover to a web page
-1. Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, WIndows users can use Git Bash.)
 
 <!-- 1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples, write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate. -->
 
 ## Reading
 
 * HTML5 and CSS3: Building Responsive Websites, Module 2 - chapters 1 to 4
+* [What is Flexbox]?(https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
+* Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, WIndows users can use Git Bash.)
+
 
 ## Terminal
 
@@ -25,9 +27,6 @@ Windows alternates to Powershell include [cmder](http://cmder.net/) or the shell
 Some basic shell commands (note the use of '$' to indicate a prompt):
 
 ```sh
-$ node --version
-$ npm --version
-$ git --version
 $ pwd
 $ ls
 $ ls -l
@@ -40,6 +39,8 @@ $ cd ..
 $ cd ~
 ```
 
+On a mac you can `cd` to a folder via drag and drop or by copying and pasting a folder into the terminal.
+
 Windows examples for cd / ls
 
 ```sh
@@ -47,15 +48,20 @@ $ dir C:\windows
 $ chdir C:\windows
 ```
 
+Note: on Windows: if you have Git installed you probably have `git-bash` on your computer. You can use that to run unix style commands e.g. `ls` instead of `dir`.
+
 If you have node installed you should be able to run JavaScript on the command line.
 
 ```sh
-node 12+12
+$ node --version
+$ npm --version
+$ git --version
+$ node
+$ 12+12
+$ .exit // or control-c
 ```
 
-On a mac you can `cd` to a folder via drag and drop or by copying and pasting a folder into the terminal.
-
-cd into today's folder and enter the following command into Terminal:
+Mac only: `cd` into today's folder and enter the following command into Terminal:
 
 ```sh
 $ python -m SimpleHTTPServer 9000
@@ -82,7 +88,7 @@ While `document.querySelectorAll()` returns a collection (`nodeList`) of the ite
 var test = document.querySelectorAll('a');
 ```
 
-We can use `category` as the basis for a more targeted query:
+We can use our `category` variable as the basis for a more targeted query:
 
 ```js
 var links = category.querySelectorAll('a');
@@ -96,6 +102,8 @@ Let's convert the nodeList into an Array:
 var linksArray = Array.from(links);
 ```
 
+Examine the methods on the resulting Array.
+
 Note: we could have created this in another manner:
 
 ```js
@@ -103,8 +111,6 @@ var linksArray = Array.from(category.querySelectorAll('a'));
 ```
 
 Examine one of the anchor tags from the resulting array in the console. Note the `textContent` property.
-
-Examine the methods on the resulting Array.
 
 Here's an example that uses the `map` method to isolate just the text content:
 
@@ -169,11 +175,13 @@ Add a link to the popover:
 }
 ``` -->
 
+In the `popover` div:
+
 ```html
 <li><a class="closer" href="#">✖︎</a></li>
 ```
 
-Create a new script at the bottom of 'scripts.js` to include a reference to the new close button:
+Create a new script at the bottom of `scripts.js` to include a reference to the new close button:
 
 ```js
 var closeButton = document.querySelector('.closer');
@@ -188,7 +196,7 @@ function close(){
 
 Note that the close function is identical to the show function we currently have.
 
-Let's refactor the script:
+Let's refactor the script by using an 'or' operator `||` in JavaScript:
 
 ```js
 if (event.target.classList.contains('map') || event.target.classList.contains('closer')) {
@@ -212,7 +220,6 @@ Format the close button:
 
 ```css
 .popover .closer {
-	/* float: right; */
 	position: absolute;
 	top: -11px;
 	right: -14px;
@@ -221,12 +228,14 @@ Format the close button:
 }
 ```
 
+Note the `cursor` property. Here is a [list of available cursors](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor) in CSS.
+
 ```css
 .popover .closer {
 	...
 	text-decoration: none;
 	background-color: #fff;
-  padding: 0.5rem;
+  padding: 0.25rem;
   border: 2px solid #600;
   border-radius: 50%;
   width: 1rem;
@@ -236,7 +245,11 @@ Format the close button:
 }
 ```
 
-<!-- Note the `cursor` property. Here is a [list of available cursors](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor) in CSS. -->
+Edit the 3 identical values using multiple cursors. Note the issue with `blockquote`.
+
+See `http://oit2.scps.nyu.edu/~ishizuky/session2/Sushi/session2_hw.html`
+
+
 
 <!-- Add a shadow to the popover:
 
@@ -287,12 +300,13 @@ We need to control z-index in this case by giving the popover a hight number tha
 
 Note that there is no possibility of animating this because we are using `display: block` and `display: none`. These are binary states and cannot be used for effects like fading on etc. More on this in a later class. -->
 
-## Flexbox for the Nav
+### Flexbox for the Nav
 
 [What is Flexbox]?(https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
 
 * flex is a _display_ attribute like `block, inline, block-inline`
 * do not confuse it with _positioning_ which we have looked at for absolute, relative and fixed positioning
+* Get familiar with [Can I Use](https://caniuse.com/#feat=flexbox) and [feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
 
 Set the anchor tags to use display flex:
 
