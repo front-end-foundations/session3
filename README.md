@@ -220,9 +220,9 @@ Format the close button:
 
 ```css
 .popover .closer {
-	position: absolute;
-	top: -11px;
-	right: -14px;
+  position: absolute;
+  top: -11px;
+  right: -14px;
   color: #600;
   cursor: pointer;
 }
@@ -232,7 +232,7 @@ Note the `cursor` property. Here is a [list of available cursors](https://www.w3
 
 ```css
 .popover .closer {
-	...
+  ...
   text-decoration: none;
   background-color: #fff;
   padding: 0.25rem;
@@ -312,21 +312,19 @@ Set the anchor tags to use display flex:
 
 ```css
 .nav {
-	display: flex;
-	...;
+  display: flex;
+  ...;
 }
 ```
 
 ```css
 .nav li {
-	/*display: inline-block;*/
-	margin-right: 1em;
+  /*display: inline-block;*/
+  margin-right: 1em;
 }
 ```
 
 ## II - Using floats to create a nav bar
-
-
 
 <img src="tabs-image.jpg">
 
