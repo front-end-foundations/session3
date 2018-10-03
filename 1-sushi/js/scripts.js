@@ -117,13 +117,23 @@ document.addEventListener('click', show, false)
 
 function show() {
 
-  if(event.target.classList.contains('map')) {
+  if (event.target.classList.contains('map') || event.target.classList.contains('closer')) {
     var body = document.querySelector('body');
     body.classList.toggle('showme');
     event.preventDefault();
   }
 
 };
+
+
+// var closeButton = document.querySelector('.closer');
+// closeButton.addEventListener('click', close);
+
+// function close(e){
+// 	var body = document.querySelector('body');
+// 	body.classList.toggle('showme');
+// 	e.preventDefault();
+// }
 
 
 
