@@ -160,7 +160,7 @@ In this exercise we will focus on list styling but instead of using `display: in
 * An HTML plugin called [Emmet](https://emmet.io) is available in VS Code
 * Review [emmet syntax](http://docs.emmet.io/abbreviations/syntax/)
 
-Create a new file in the `float-nav` folder and save it as `index.html`.
+Create a new `index.html` file in the `float-nav` folder.
 
 Emmet samples to run:
 
