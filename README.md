@@ -151,18 +151,18 @@ var de = linkText.filter(streetName => streetName.includes('de'));
 
 ## Styling a List: Floats vs Flexbox
 
-<img src="Tabs/tabs-image.jpg">
+<img src="other/tabs-image.jpg">
 
 In this exercise we will focus on list styling but instead of using `display: inline` or `display: inline-block` to create horizontal navigation we will use floats.
 
 ## In VS Code
 
-* An HTML macro system called [Emmet](https://packagecontrol.io/packages/Emmet) is available
+* An HTML plugin called [Emmet](https://emmet.io) is available in VS Code
 * Review [emmet syntax](http://docs.emmet.io/abbreviations/syntax/)
 
-Create a new file and save it as `index.html`.
+Create a new file in the `float-nav` folder and save it as `index.html`.
 
-Emmet samples:
+Emmet samples to run:
 
 `html`
 
@@ -464,7 +464,7 @@ Set the anchor tags to use display flex:
 
 ## II - Using Floats to Create a Navbar
 
-<img src="tabs-image.jpg">
+<img src="other/tabs-image.jpg">
 
 In this exercise we will focus on list styling and navigation but instead of using `display: inline-block` to create horizontal navigation we will use floats and the flexbox.
 
@@ -649,7 +649,7 @@ a {
 ```
 
 By floating the anchors we cause the list items to expand to contain their floated children.
-Now we add a background image to the <a>. Note that the image has a gradient and transparency.
+Now we add a background image to the `<a>` tag. Note that the image has a gradient and transparency.
 
 ```css
 a {
@@ -1049,7 +1049,7 @@ To correct this we need to change the URL shown in the address bar of the browse
 
 ## III - Using Flexbox to Create a Navbar
 
-<img src="hero-1.png">
+<img src="other/hero-1.png">
 
 FlexBox:
 
