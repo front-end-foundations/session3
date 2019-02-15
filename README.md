@@ -2,20 +2,21 @@
 
 ## Homework
 
-1. See how far you can get on [Flexbox Froggy](http://flexboxfroggy.com/)
+
 1. Complete last week's assignment - add a popover to a web page
 1. Complete the nav as outlined in class starting [here](https://github.com/front-end-foundations/session3#looking-forward) and ending [here](https://github.com/front-end-foundations/session3#iii---using-flexbox-to-create-a-navbar)
+1. Install [NodeJS](https://nodejs.org/en/) (the latest version) and [Git](https://git-scm.com/) on your personal computer. Create a free account on [Github](http://github.com)
 
 <!-- 1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples, write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate. -->
 
 ## Reading
 
-* HTML5 and CSS3: Building Responsive Websites, Module 2 - chapters 1 to 4
+<!-- * HTML5 and CSS3: Building Responsive Websites, Module 2 - chapters 1 to 4 -->
 * [What is Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
-* Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, WIndows users can use Git Bash.)
+* See how far you can get on [Flexbox Froggy](http://flexboxfroggy.com/)
+* Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, Windows users can use Git Bash.)
 
-
-## Terminal
+<!-- ## Terminal
 
 [Real developers know how to use command line. – Assholes](https://gomakethings.com/you-dont-need-to-know-command-line-to-be-a-good-developer/)
 
@@ -68,15 +69,15 @@ Mac only: `cd` into today's folder and enter the following command into Terminal
 $ python -m SimpleHTTPServer 9000
 ```
 
-Access `localhost:8000` in Chrome. Note the directory listing. `ctrl-c` to quit the process.
+Access `localhost:8000` in Chrome. Note the directory listing. `ctrl-c` to quit the process. -->
 
-## I - Sushi Homework
-
-### Review
+## JavaScipt Review
 
 Recall `document.querySelector()` returns the first selected item.
 
-Navigate to [Wikipedia](https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris). Inspect the list to find `.mw-category` and paste the following in the console:
+Navigate to this [Wikipedia](https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris) article. Inspect one of the listed boulevards to find `.mw-category` in the code.
+
+Paste the following in the console:
 
 ```js
 var test = document.querySelector('a'); // returns the first anchor on the page
@@ -97,23 +98,24 @@ var links = category.querySelectorAll('a');
 
 Examine the methods on the resulting nodeList. Try `links.length` in the console.
 
-Let's convert the nodeList into an Array:
+An array is a list of values that might look like this:
+
+```js
+var fruits = ['Apple', 'Banana'];
+```
+
+Our nodeList looks like an array but isn't. Let's convert the nodeList into an Array:
 
 ```js
 var linksArray = Array.from(links);
 ```
 
-Examine the methods on the resulting Array.
+Try:
 
-Note: we could have created this in another manner:
+- Examine the methods on the resulting Array.
+- Examine one of the anchor tags from the resulting array in the console. Note the `textContent` property.
 
-```js
-var linksArray = Array.from(category.querySelectorAll('a'));
-```
-
-Examine one of the anchor tags from the resulting array in the console. Note the `textContent` property.
-
-Here's an example that uses the `map` method to isolate just the text content:
+Here's an example that uses the array's [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to isolate just the text content:
 
 ```js
 var linkText = linksArray.map(function (link){
@@ -124,7 +126,13 @@ var linkText = linksArray.map(function (link){
 Here's an alternative form of the same thing:
 
 ```js
-var linkText = linksArray.map(link => link.textContent);
+var linkText = linksArray.map( (link) => link.textContent);
+```
+
+Note that we use `=>` instead of the word `function`. We could also remove the round braces:
+
+```js
+var linkText = linksArray.map( link => link.textContent);
 ```
 
 Let's use another Array method, `filter`, to isolate only those boulevards that contain a specific string:
@@ -141,7 +149,294 @@ Here's an alternate form of the same thing:
 var de = linkText.filter(streetName => streetName.includes('de'));
 ```
 
+## Styling a List: Floats vs Flexbox
 
+<img src="Tabs/tabs-image.jpg">
+
+In this exercise we will focus on list styling but instead of using `display: inline` or `display: inline-block` to create horizontal navigation we will use floats.
+
+## In VS Code
+
+* An HTML macro system called [Emmet](https://packagecontrol.io/packages/Emmet) is available
+* Review [emmet syntax](http://docs.emmet.io/abbreviations/syntax/)
+
+Create a new file and save it as `index.html`.
+
+Emmet samples:
+
+`html`
+
+`ul>li*4>a[href="#"]{link}`
+
+`nav>ul>li.t-cuisines*4>a[href="cuisines.html"]{cuisines}`
+
+Then use multiple selections to edit it as shown:
+
+```html
+<nav>
+  <ul class="nav">
+    <li class="t-cuisines"><a href="cuisines.html">Cuisines</a></li>
+    <li class="t-chefs"><a href="chefs.html">Chefs</a></li>
+    <li class="t-reviews"><a href="reviews.html">Reviews</a></li>
+    <li class="t-delivery"><a href="delivery.html">Delivery</a></li>
+  </ul>
+</nav>
+```
+
+Take a moment to examine the default user agent styles using the inspector.
+
+Add and review some basic formatting (in a `<style>` block) and remove the bullets from the `<ul>`:
+
+```css
+body {
+  margin: 0;
+  font-family: 'Lucida Grande', sans-serif;
+}
+.nav {
+  background: #ffcb2d;
+  margin: 0;
+  padding: 0 0 0 46px;
+  list-style: none;
+}
+```
+
+Float the list items to the left:
+
+```css
+li {
+  float: left;
+}
+```
+
+Notice what happened to the `<ul>`'s height. The `<li>` items no longer force the parent `<ul>` element to expand to contain them. This behavior, know as collapsing, occurs whenever all the direct children of a container element are floated. In this case the `<ul>` has collapsed. This behavior is important as "collapsing" is a common design issue when using floats.
+
+There are a number of methods in use to prevent this:
+
+- float a float (or "FNE" - float nearly everything) - apply a float to the collapsed element
+- the clearfix hack - this entails creating a utility class and will be covered later
+- adding a clearing div - this entails adding an HTML element to the page and is discouraged
+
+For our current example let's use the second FNE method.
+
+Try adding a float to the 'collapsed' element:
+
+```css
+.nav {
+  ... 
+  float: left;
+}
+```
+
+Note that the width has changed. Boxes are 100% width by default (they stretch to fill their container). Floating the collapsed element causes it to contract to contain its children.
+
+Since we want the `<ul>` to extend the width of the window let's fix the width.
+
+```css
+.nav {
+  ... 
+  width: 100%;
+}
+```
+
+Note: when you float an element you usually have to specify a width.
+
+Extend the [background property](https://www.w3schools.com/css/css_background.asp) to add a background color and image to the `<ul>`.
+
+```css
+.nav {
+  ... 
+  background-color: #ffcb2d;
+  background-image: url(i/nav_bg.gif);
+}
+```
+
+Aside: demo the background property using `pattern.gif`.
+
+Add positioning to the background.
+
+```css
+.nav {
+  ... 
+  background-color: #ffcb2d;
+  background-image: url(i/nav_bg.gif);
+  background-repeat: repeat-x;
+  background-position: bottom left;
+}
+```
+
+Next we'll tackle the `<a>` tags. Add the following to our CSS block.
+
+```css
+a {
+  text-decoration: none;
+  color: #333;
+}
+```
+
+Adding padding, margins to separate, and a border to make them more tab-like:
+
+```css
+a {
+  ... 
+  padding: 4px 8px;
+  border: 1px solid #9b8748;
+  border-radius: 3px 3px 0 0;
+  margin: 0 6px 0 0;
+}
+```
+
+The same issue we had with collapsing earlier has occurred here as well with the anchor tags. The padding and border is hanging below the yellow area. We will use the same float method as before to make the container expand to fit its floated children. Let's remove the redundant border while we're at it.
+
+```css
+a {
+  ... 
+  border-bottom: none;
+  float: left;
+}
+```
+
+By floating the anchors we cause the `<li>`s to expand to contain their floated children.
+Now we add a background image to the `<a>`. Note the use of the background shortcut and that the image has a gradient and transparency.
+
+```css
+
+a {
+  ...
+  background: #f9eaa9 url(i/off_bg.gif) repeat-x top left;
+}
+```
+
+Note - the background graphic we placed in the `<ul>` is obscured by the tabs.
+
+Now we create hover states for our tabs by swapping out the background image:
+
+```css
+a:hover {
+  background: #fff url(i/on_bg.gif) repeat-x top left;
+}
+```
+
+### Finishing touches
+
+This part is a bit tricky since it uses padding to show or hide the background graphic running along the bottom of the `<ul>`. We will be increasing the height by one pixel on hover to hide the image.
+
+Recall that the padding on the bottom of the anchor tags was 4px. Let's increase the padding on the hover state to 5px.
+
+```css
+a:hover {
+  ... 
+  padding-bottom: 5px;
+}
+```
+
+If you roll over the tabs now the height of the anchor increases by one pixel causing the `<ul>` to expand as well and thus showing the border along the bottom under the inactive tabs.
+
+Due to the fact that there is no selected tab (only hovered) the height of the element appears to jump slightly. Let's assume that one of the tabs will always be highlighted.
+
+Create a second selector to highlight one of the anchors by adding `.t-cuisines a` as a second selector to the hover rule.
+
+Multiple selectors must be separated by a comma. Most prefer to keep the multiple selectors on separate lines like so:
+
+```css
+a:hover,
+.t-cuisines a {
+  ...;
+}
+```
+
+Now, if we add an id to the body tag we can edit the selector to make it page specific.
+
+Add `class="cuisines"` to the body tag.
+
+```html
+<body class="p-cuisines">
+```
+
+Edit the second selector to make the tab highlighting specific to this page.
+
+```css
+a:hover,
+.p-cuisines .t-cuisines a {
+  ...;
+}
+```
+
+We are going to create a second HTML page shortly so let's copy our CSS into an external file as `styles.css` and link to it:
+
+```html
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+```
+
+Note that because we used a new directory, the paths to the images are no longer correct. Correct them now using this pattern:
+
+```css
+background-image: url(../i/nav_bg.gif);
+```
+
+Save a new copy of the HTML page as `chefs.html` and edit the ID:
+
+```html
+<body class="chefs"></body>
+```
+
+Add a new selector to the CSS.
+
+```css
+a:hover,
+.p-cuisines .t-cuisines a,
+.p-chefs .t-chefs a {
+  ...;
+}
+```
+
+Now when you navigate between the two pages you should see a friendly reminder of what page you are on courtesy of the CSS file.
+
+- There is a demo of this in the `Tabs > demo` directory.
+
+### Removing the on- off- images
+
+Images and any other externally linked asset increases the time it takes to download and render your page. It is considered a best practice to minimize the number of images whereever possible so let's remove as many as we can.
+
+Aside: [Hex color vs. RGB vs. RGBA](https://www.w3schools.com/colors/colors_converter.asp)
+
+- [Intro to gradients in css](https://css-tricks.com/css3-gradients/) has more information than you'll ever need
+- The [Gradient editor](http://www.colorzilla.com/gradient-editor/) is still a useful tool
+
+Edit the background properties for the tabs:
+
+Normal (eg. non-hovered) state:
+
+```css
+background-image: linear-gradient(
+  to bottom,
+  rgba(255, 236, 165, 1) 0%,
+  rgba(232, 213, 149, 1) 6%,
+  rgba(253, 233, 162, 1) 94%,
+  rgba(253, 233, 162, 1) 100%
+);
+```
+
+Highlighted (eg. hovered) state:
+
+```css
+background-image: linear-gradient(
+  to bottom,
+  rgba(255, 255, 255, 1) 0%,
+  rgba(224, 226, 240, 1) 6%,
+  rgba(254, 254, 254, 1) 53%
+);
+```
+
+We cannot use `border` for the underline on the `<ul>` so let's use a very thin gradient:
+
+```css
+background-image: linear-gradient(
+  to bottom,
+  #ffcb2d 0%,
+  #ffcb2d 96%,
+  #9b8748 100%
+);
+```
 
 ### Flexbox for the Nav
 
@@ -952,5 +1247,7 @@ function setActive(){
 }
 ```
 
+## Notes
 
+http://info.cern.ch/
 
