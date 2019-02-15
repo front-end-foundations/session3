@@ -1,1 +1,38 @@
 /* styles go here */
+
+body {
+  margin: 0;
+  font-family: 'Lucida Grande', sans-serif;
+}
+.nav {
+  margin: 0;
+  padding: 1rem 0 0 46px;
+  list-style: none;
+  float: left;
+  width: 100%;
+  background-color: #ffcb2d;
+  background-image: url(../img/nav_bg.gif);
+  background-repeat: repeat-x;
+  background-position: bottom left;
+}
+li {
+  float: left;
+}
+a {
+  text-decoration: none;
+  color: #777;
+  padding: 4px 8px;
+  border: 1px solid #9b8748;
+  border-radius: 3px 3px 0 0;
+  margin: 0 6px 0 0;
+  border-bottom: none;
+  float: left;
+  background: #f9eaa9 url(../img/off_bg.png) repeat-x top left;
+}
+a:hover,
+.p-cuisines .t-cuisines a,
+.p-chefs .t-chefs a {
+  background: #fff url(../img/on_bg.png) repeat-x top left;
+  padding-bottom: 5px;
+
+}

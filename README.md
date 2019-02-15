@@ -160,37 +160,45 @@ In this exercise we will focus on list styling but instead of using `display: in
 * An HTML plugin called [Emmet](https://emmet.io) is available in VS Code
 * Review [emmet syntax](http://docs.emmet.io/abbreviations/syntax/)
 
+I do not expect you to master (or even use Emmet) to create your HTML but it is helpful to understand what VS Code offers in terms of shortcuts and how to start using them.
+
 Create a new `index.html` file in the `float-nav` folder.
 
-Emmet samples to run:
+Emmet samples to try in `index.html`:
 
-`html`
+`html:5`
 
 `ul>li*4>a[href="#"]{link}`
 
-`nav>ul>li.t-cuisines*4>a[href="cuisines.html"]{cuisines}`
+`nav>ul.nav>li.t-cuisines*4>a[href="cuisines.html"]{cuisines}`
 
-Then use multiple selections to edit it as shown:
+Then use multiple selections (`command-d`) to edit it as shown:
 
 ```html
 <nav>
   <ul class="nav">
-    <li class="t-cuisines"><a href="cuisines.html">Cuisines</a></li>
-    <li class="t-chefs"><a href="chefs.html">Chefs</a></li>
-    <li class="t-reviews"><a href="reviews.html">Reviews</a></li>
-    <li class="t-delivery"><a href="delivery.html">Delivery</a></li>
+    <li class="t-cuisines"><a href="index.html">cuisines</a></li>
+    <li class="t-chefs"><a href="chefs.html">chefs</a></li>
+    <li class="t-reviews"><a href="reviews.html">reviews</a></li>
+    <li class="t-delivery"><a href="delivery.html">delivery</a></li>
   </ul>
 </nav>
 ```
 
-Take a moment to examine the default user agent styles using the inspector.
+Add a link to `styles.css` in `index.html`:
 
-Add and review some basic formatting (in a `<style>` block) and remove the bullets from the `<ul>`:
+`<link rel="stylesheet" href="css/styles.css">`
+
+Open the file in Chrome and examine the default user agent styles using the inspector.
+
+Add and review some basic formatting in `styles.css`:
 
 ```css
 body {
   margin: 0;
-  font-family: 'Lucida Grande', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .nav {
   background: #ffcb2d;
@@ -200,6 +208,10 @@ body {
 }
 ```
 
+Note the complex looking `font-family` value. (In the future you will be able to write just `font-family: system-ui;`.)
+
+It is quite common today to use a _system font stack_ that allows each operating system to use its native font. You can learn more about it at [this blog post](https://flaviocopes.com/css-system-fonts/).
+
 Float the list items to the left:
 
 ```css
@@ -208,17 +220,21 @@ li {
 }
 ```
 
-Notice what happened to the `<ul>`'s height. The `<li>` items no longer force the parent `<ul>` element to expand to contain them. This behavior, know as collapsing, occurs whenever all the direct children of a container element are floated. In this case the `<ul>` has collapsed. This behavior is important as "collapsing" is a common design issue when using floats.
+Notice what happened to the `<ul>`'s height. 
+
+The `<li>` items no longer force the parent `<ul>` element to expand to contain them. We can see this by virtue of the fact that the yellow background color has disappeared.
+
+This behavior, know as collapsing, occurs whenever all the direct children of a container element are floated. In this case the `<ul>` has collapsed. This behavior is important as "collapsing" is a common design issue when using floats.
 
 There are a number of methods in use to prevent this:
 
 - float a float (or "FNE" - float nearly everything) - apply a float to the collapsed element
 - the clearfix hack - this entails creating a utility class and will be covered later
-- adding a clearing div - this entails adding an HTML element to the page and is discouraged
+- adding a clearing div - this entails adding an HTML element to the page solely for the purpose of visual formatting and so is discouraged
 
 For our current example let's use the second FNE method.
 
-Try adding a float to the 'collapsed' element:
+Try adding a float to the 'collapsed' `ul` element:
 
 ```css
 .nav {
@@ -229,12 +245,13 @@ Try adding a float to the 'collapsed' element:
 
 Note that the width has changed. Boxes are 100% width by default (they stretch to fill their container). Floating the collapsed element causes it to contract to contain its children.
 
-Since we want the `<ul>` to extend the width of the window let's fix the width.
+Since we want the `<ul>` to extend the width of the window let's fix the width and add a touch of space above.
 
 ```css
 .nav {
   ... 
   width: 100%;
+  padding: 1rem 0 0 46px;
 }
 ```
 
@@ -246,11 +263,11 @@ Extend the [background property](https://www.w3schools.com/css/css_background.as
 .nav {
   ... 
   background-color: #ffcb2d;
-  background-image: url(i/nav_bg.gif);
+  background-image: url(../img/nav_bg.gif);
 }
 ```
 
-Aside: demo the background property using `pattern.gif`.
+Aside: demo the background property using `img/pattern.gif`.
 
 Add positioning to the background.
 
@@ -258,7 +275,7 @@ Add positioning to the background.
 .nav {
   ... 
   background-color: #ffcb2d;
-  background-image: url(i/nav_bg.gif);
+  background-image: url(../img/nav_bg.gif);
   background-repeat: repeat-x;
   background-position: bottom left;
 }
@@ -302,11 +319,14 @@ Now we add a background image to the `<a>`. Note the use of the background short
 
 a {
   ...
-  background: #f9eaa9 url(i/off_bg.gif) repeat-x top left;
+  background: #f9eaa9 url(../img/off_bg.gif) repeat-x top left;
 }
 ```
 
-Note - the background graphic we placed in the `<ul>` is obscured by the tabs.
+Note: 
+
+- We are using the background shortcut
+- the background graphic we placed in the `<ul>` is obscured by the tabs.
 
 Now we create hover states for our tabs by swapping out the background image:
 
@@ -318,7 +338,7 @@ a:hover {
 
 ### Finishing touches
 
-This part is a bit tricky since it uses padding to show or hide the background graphic running along the bottom of the `<ul>`. We will be increasing the height by one pixel on hover to hide the image.
+We will use padding to show or hide the background graphic running along the bottom of the `<ul>` - increasing the height by one pixel on hover to hide the image.
 
 Recall that the padding on the bottom of the anchor tags was 4px. Let's increase the padding on the hover state to 5px.
 
@@ -331,7 +351,7 @@ a:hover {
 
 If you roll over the tabs now the height of the anchor increases by one pixel causing the `<ul>` to expand as well and thus showing the border along the bottom under the inactive tabs.
 
-Due to the fact that there is no selected tab (only hovered) the height of the element appears to jump slightly. Let's assume that one of the tabs will always be highlighted.
+Due to the fact that there is no selected tab (only hovered) the height of the ul jumps 1 pixel. Let's assume that one of the tabs will always be highlighted.
 
 Create a second selector to highlight one of the anchors by adding `.t-cuisines a` as a second selector to the hover rule.
 
@@ -361,25 +381,13 @@ a:hover,
 }
 ```
 
-We are going to create a second HTML page shortly so let's copy our CSS into an external file as `styles.css` and link to it:
+Save a copy of `index.html` as `chefs.html` and add a class to the body tag:
 
 ```html
-<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<body class="p-chefs"></body>
 ```
 
-Note that because we used a new directory, the paths to the images are no longer correct. Correct them now using this pattern:
-
-```css
-background-image: url(../i/nav_bg.gif);
-```
-
-Save a new copy of the HTML page as `chefs.html` and edit the ID:
-
-```html
-<body class="chefs"></body>
-```
-
-Add a new selector to the CSS.
+Add a new selector to the CSS:
 
 ```css
 a:hover,
@@ -389,9 +397,23 @@ a:hover,
 }
 ```
 
-Now when you navigate between the two pages you should see a friendly reminder of what page you are on courtesy of the CSS file.
+Lighten the color of the text in the inactive tabs:
 
-- There is a demo of this in the `Tabs > demo` directory.
+```css
+a {
+  ...
+  color: #777;
+}
+a:hover,
+.p-cuisines .t-cuisines a,
+.p-chefs .t-chefs a {
+  ...
+  color: #333;
+}
+
+```
+
+Now when you navigate between the two pages you should see a friendly reminder of what page you are on courtesy of the CSS file.
 
 ### Removing the on- off- images
 
