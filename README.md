@@ -417,12 +417,12 @@ Now when you navigate between the two pages you should see a friendly reminder o
 
 ### Removing the on- off- images
 
-Images and any other externally linked asset increases the time it takes to download and render your page. It is considered a best practice to minimize the number of images whereever possible so let's remove as many as we can.
+Images and externally linked assets are an important factor contributing to the time it takes to download and render your page. It is considered a best practice to minimize the number of images whereever possible so let's remove as many as we can.
 
 Aside: [Hex color vs. RGB vs. RGBA](https://www.w3schools.com/colors/colors_converter.asp)
 
 - [Intro to gradients in css](https://css-tricks.com/css3-gradients/) has more information than you'll ever need
-- The [Gradient editor](http://www.colorzilla.com/gradient-editor/) is still a useful tool
+- The [Gradient editor](http://www.colorzilla.com/gradient-editor/) is a useful tool
 
 Edit the background properties for the tabs:
 
