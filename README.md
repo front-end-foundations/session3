@@ -414,7 +414,7 @@ a:hover,
 }
 ```
 
-Lighten the color of the text in the inactive tabs:
+Lighten the color of the text and the border-color in the inactive tabs:
 
 ```css
 a {
@@ -426,6 +426,7 @@ a:hover,
 .p-chefs .t-chefs a {
   ...
   color: #333;
+  border-color: #9b8748;
 }
 
 ```
@@ -516,6 +517,7 @@ Add `display: flex` to the nav:
 
 ```css
 .nav {
+  /* float: left; */
   display: flex;
   ...
 }
@@ -539,7 +541,9 @@ a:hover,
 }
 ```
 
-Reminder - we have a meta tag:
+See [this Pen](https://codepen.io/DannyBoyNYC/pen/dawPQz) for some basic info on how to control flexbox responsively.
+
+We have a meta tag:
 
 ```html
 <meta name="viewport" content="width=device-width">
@@ -718,7 +722,7 @@ function makeActive() {
 }
 ```
 
-So let's make the content of the `.content` div depend on the link's href. We will use `includes` becasue a test for simple equality will fail:
+So let's make the content of the `.content` div depend on the link's href. We will use `includes` as a test for simple equality will fail:
 
 ```js
 function makeActive() {

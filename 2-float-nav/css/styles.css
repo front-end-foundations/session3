@@ -53,6 +53,8 @@ a:hover,
   );
   /* padding-bottom: 5px; */
   border-bottom: none;
+  color: #333;
+  border-color: #9b8748;
 }
 
 @media (max-width: 768px) {
