@@ -3,7 +3,7 @@
 ## Homework
 
 1. Complete last week's assignment - add a popover to a web page
-1. Install [NodeJS](https://nodejs.org/en/) (the latest version) and [Git](https://git-scm.com/) on your personal computer. Create a free account on [Github](http://github.com)
+1. Install [NodeJS](https://nodejs.org/en/) (the latest version) and [Git](https://git-scm.com/) on your personal computer. Create a free account on [Github](http://github.com). Perform the command line exercise (below).
 
 ## Midterm
 
@@ -13,10 +13,9 @@ Files are located [here](https://github.com/front-end-foundations/midterm). The 
 
 ## Reading
 
-<!-- * HTML5 and CSS3: Building Responsive Websites, Module 2 - chapters 1 to 4 -->
 * [What is Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
 * See how far you can get on [Flexbox Froggy](http://flexboxfroggy.com/)
-* Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, Windows users can use Git Bash.)
+* Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, Windows users should use the copy of Git Bash that is installed along with [Git](https://git-scm.com/).)
 
 <!-- ## Terminal
 
