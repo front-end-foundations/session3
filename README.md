@@ -2,12 +2,14 @@
 
 ## Homework
 
-
 1. Complete last week's assignment - add a popover to a web page
-1. Complete the nav as outlined in class starting [here](https://github.com/front-end-foundations/session3#looking-forward) and ending [here](https://github.com/front-end-foundations/session3#iii---using-flexbox-to-create-a-navbar)
 1. Install [NodeJS](https://nodejs.org/en/) (the latest version) and [Git](https://git-scm.com/) on your personal computer. Create a free account on [Github](http://github.com)
 
-<!-- 1. Midterm time! Files are located [here](http://daniel.deverell.com/css-files/_midterm-files.zip). http://daniel.deverell.com/css-files/_midterm-files.zip. You need select one layout from the samples, write HTML for the content (.txt files are provided for convenience), and create CSS to match the layout. Be sure to use `white-space: pre;` for the poetry where appropriate. -->
+## Midterm
+
+You have two week to complete this. The first stage - due in a week - is to write semantic HTML. The next will be to add CSS.
+
+Files are located [here](https://github.com/front-end-foundations/midterm). The instructions are in the readme. Be sure to use `white-space: pre;` for the poetry where appropriate.
 
 ## Reading
 
