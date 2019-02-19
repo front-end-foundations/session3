@@ -1,10 +1,11 @@
-# III Floats and Flexbox
+# III - Floats and Flexbox
 
 Finished versions of all the exercises below are available on the [NYU Server](http://oit2.scps.nyu.edu/~devereld) in the [session3](http://oit2.scps.nyu.edu/~devereld/session3/) directory.
 
 ## Homework
 
 1. Complete last week's assignment - add a popover to a web page
+1. Review the notes below and reconstruct the tabs from scratch
 1. Install [NodeJS](https://nodejs.org/en/) (the latest version) and [Git](https://git-scm.com/) on your personal computer. Create a free account on [Github](http://github.com). Perform the command line exercise (below).
 
 ## Midterm
@@ -23,6 +24,7 @@ Files and instructions are located [here](https://github.com/front-end-foundatio
 
 * CSS [Glass with reflections](https://codepen.io/ivorjetski/pen/xMJoYO)
 * CSS [Hamburger mania](https://codepen.io/jcoulterdesign/pen/KJBmEx)
+* A treatise on web design history and philosophy - [Resilient Design](https://resilientwebdesign.com/?mc_cid=3493fcccd1&mc_eid=56e1ba6a62). (Very well done.)
 
 <!-- ## Terminal
 
