@@ -171,7 +171,7 @@ We will be finishing the Sushi review exercise from session 2 beginning [here](h
 
 <img src="other/tabs-image.jpg">
 
-In this exercise we will focus on list styling but instead of using `display: inline` or `display: inline-block` to create horizontal navigation we will use floats.
+In this exercise we will focus on list styling but instead of using `display: inline` or `display: inline-block` to create horizontal navigation we will use techniques involving floats and flexbox.
 
 ## In VS Code
 
