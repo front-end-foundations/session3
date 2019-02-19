@@ -17,6 +17,11 @@ Files are located [here](https://github.com/front-end-foundations/midterm). The 
 * See how far you can get on [Flexbox Froggy](http://flexboxfroggy.com/)
 * Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, Windows users should use the copy of Git Bash that is installed along with [Git](https://git-scm.com/).)
 
+## Interesting
+
+* https://codepen.io/ivorjetski/pen/xMJoYO
+* https://codepen.io/jcoulterdesign/pen/KJBmEx
+
 <!-- ## Terminal
 
 [Real developers know how to use command line. – Assholes](https://gomakethings.com/you-dont-need-to-know-command-line-to-be-a-good-developer/)
@@ -572,7 +577,7 @@ Flex order property (demo only):
 }
 ```
 
-## Looking Forward
+## Scripting the Navbar
 
 Examine the other demos in the `done` folder.
 

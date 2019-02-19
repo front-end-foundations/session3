@@ -42,8 +42,7 @@ a {
   );
 }
 a:hover,
-.p-cuisines .t-cuisines a,
-.p-chefs .t-chefs a {
+a.active {
   background: #fff;
   background-image: linear-gradient(
     to bottom,
