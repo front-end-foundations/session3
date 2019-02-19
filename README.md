@@ -427,7 +427,7 @@ a:hover,
 }
 ```
 
-Save a copy of `index.html` as `chefs.html` and add a class to the body tag:
+Note the body tag in `chefs.html`:
 
 ```html
 <body class="p-chefs"></body>
@@ -448,7 +448,7 @@ Lighten the color of the text and the border-color in the inactive tabs:
 ```css
 a {
   ...
-  color: #777;
+  color: #888;
 }
 a:hover,
 .p-cuisines .t-cuisines a,
@@ -466,10 +466,7 @@ Now when you navigate between the two pages you should see a friendly reminder o
 
 Images and externally linked assets are an important factor contributing to the time it takes to download and render your page. It is considered a best practice to minimize the number of images where ever possible.
 
-Aside: [Hex color vs. RGB vs. RGBA](https://www.w3schools.com/colors/colors_converter.asp)
-
-- [Intro to gradients in css](https://css-tricks.com/css3-gradients/) has more information than you'll ever need
-- The [Gradient editor](http://www.colorzilla.com/gradient-editor/) is a useful tool
+The [Gradient editor](http://www.colorzilla.com/gradient-editor/) is a useful tool.
 
 Edit the background properties for the tabs:
 
@@ -500,7 +497,7 @@ background-image: linear-gradient(
 );
 ```
 
-We cannot use `border` for the underline on the `<ul>` so let's use a very thin gradient:
+<!-- We cannot use `border` for the underline on the `<ul>` so let's use a very thin gradient:
 
 ```css
 a:hover,
@@ -515,7 +512,7 @@ a:hover,
     rgba(254, 254, 254, 1) 53%
   );
 }
-```
+``` -->
 
 <!-- Underline:
 
@@ -540,7 +537,7 @@ a:hover,
 * Do not confuse it with _positioning_ which we have looked at for absolute, relative and fixed positioning
 * Get familiar with [Can I Use](https://caniuse.com/#feat=flexbox) and [feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
 
-First - comment out the float properties in the CSS.
+Comment out all the float properties in the CSS.
 
 Add `display: flex` to the nav:
 
@@ -619,7 +616,7 @@ a.active {
 }
 ```
 
-Create a script tag at the bottom of the document and add:
+Create a script tag at the bottom of `index.html` and add:
 
 ```html
 <script>
@@ -639,15 +636,19 @@ Now we need to attach an eventListener to each of the tabs:
 
 ```js
 var tabs = document.querySelectorAll('.nav a');
+
 tabs.forEach(function(tab) {
   tab.addEventListener('click', makeActive);
 });
 
 function makeActive() {
-  console.log(this);
+  // console.log(this);
+  console.log(event.target);
   event.preventDefault();
 }
 ```
+
+Note the use of `this` to refer to the thing clicked on. `This` is very powerful. The value of `this` is usually determined by a functions execution context. Execution context simply means how a function is called. Our function is called by clicking on a link so `this` shows as a link in the console when we log it.
 
 Using an Arrow function shortcut (for anonymous functions):
 
@@ -656,12 +657,10 @@ var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
-  console.log(this);
+  console.log(event.target);
   event.preventDefault();
 }
 ```
-
-Note the use of `this` to refer to the thing clicked on. `This` is very powerful. The value of `this` is usually determined by a functions execution context. Execution context simply means how a function is called. Our function is called by clicking on a link so `this` shows as a link in the console when we log it.
 
 Let's use `classList` again to add a class to the link we click on:
 
@@ -670,7 +669,7 @@ var tabs = document.querySelectorAll('.nav a');
 tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
-  this.classList.add('active');
+  event.target.classList.add('active');
   event.preventDefault();
 }
 ```
@@ -683,7 +682,7 @@ tabs.forEach(tab => tab.addEventListener('click', makeActive));
 
 function makeActive() {
   tabs.forEach(tab => tab.classList.remove('active'));
-  this.classList.add('active');
+  event.target.classList.add('active');
   event.preventDefault();
 }
 ```
@@ -757,7 +756,7 @@ So let's make the content of the `.content` div depend on the link's href. We wi
 function makeActive() {
   console.log(this.href);
   makeInactive();
-  this.classList.add('active');
+  event.target.classList.add('active');
   if (this.href.includes('cuisines')) {
     contentPara.innerHTML = cuisines;
   } else if (this.href.includes('chefs')) {
@@ -781,10 +780,7 @@ To correct this we need to change the URL shown in the address bar of the browse
 
 <img src="other/hero-1.png">
 
-FlexBox:
-
-* CSS Flexible Box Layout Module
-* A simple guide to the various CSS properties on [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* A simple guide to the various CSS properties on [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). (Good to keep open for reference.)
 
 We will use [Font Awesome](http://fontawesome.io/) for the icons in this exercise.
 
@@ -800,13 +796,13 @@ For the logo:
 <a href="#0" class="logo"><i class="fa fa-bullseye fa-3x"></i></a>
 ```
 
-Gear:
+For the gear:
 
 ```html
 <i class="fa fa-gear"></i>
 ```
 
-A font stack that ensures the [device's default font](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/) will be used (native font):
+We'll use a font stack that ensures the [device's default font](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/) will be used:
 
 ```css
 body {
@@ -944,7 +940,7 @@ Note - requires corresponding CSS (see `index-done.html`)
 }
 
 .account-dropdown ul {
-  padding: 4px;
+  padding: 8px;
   margin: 0;
   list-style: none;
   position: absolute;
@@ -952,6 +948,8 @@ Note - requires corresponding CSS (see `index-done.html`)
   left: 10px;
   color: #333;
   background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
   font-size: 0.875rem;
 }
 ```
@@ -972,7 +970,7 @@ function setActive(){
   for ( var i = 0; i < mainNav.length; i++){
     mainNav[i].classList.remove('active')
   }
-  this.classList.add('active')
+  event.target.classList.add('active')
   event.preventDefault()
 }
 ```
