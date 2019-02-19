@@ -1,1 +1,48 @@
 /* styles go here */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+  background-image: url(../img/pattern.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.nav {
+  background: #ffcb2d;
+  margin: 0;
+  padding: 0 0 0 46px;
+  list-style: none;
+  /* display: flex; */
+  float: left;
+  width: 100%;
+  padding: 1rem 0 0 46px;
+  background-color: #ffcb2d;
+  background-image: url(../img/nav_bg.gif);
+  background-repeat: repeat-x;
+  background-position: bottom left;
+}
+li {
+  float: left;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  padding: 4px 8px;
+  border: 1px solid #9b8748;
+  border-radius: 3px 3px 0 0;
+  margin: 0 6px 0 0;
+  border-bottom: none;
+  float: left;
+  background: #f9eaa9 url(../img/off_bg.gif) repeat-x top left;
+}
+
+a:hover,
+.p-cuisines .t-cuisines a  {
+  background: #fff url(i/on_bg.gif) repeat-x top left;
+  padding-bottom: 5px;
+}

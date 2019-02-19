@@ -180,7 +180,7 @@ In this exercise we will focus on list styling but instead of using `display: in
 
 I do not expect you to master (or even use Emmet) to create your HTML but it is helpful to understand what VS Code offers in terms of shortcuts and how to start using them.
 
-Create a new `index.html` file in the `float-nav` folder.
+Create a new `index.html` file in the `2-float-nav` folder.
 
 Emmet samples to try in `index.html`:
 
@@ -242,7 +242,7 @@ Notice what happened to the `<ul>`'s height.
 
 The `<li>` items no longer force the parent `<ul>` element to expand to contain them. We can see this by virtue of the fact that the yellow background color has disappeared.
 
-This behavior, know as collapsing, occurs whenever all the direct children of a container element are floated. In this case the `<ul>` has collapsed. This behavior is important as "collapsing" is a common design issue when using floats.
+This behavior, known as collapsing, occurs whenever all the direct children of a container element are floated. In this case the `<ul>` has collapsed. This behavior is important as "collapsing" is a common design issue when using floats.
 
 There are a number of methods in use to prevent this:
 
@@ -292,6 +292,8 @@ We could also apply it to the entire project:
 }
 ```
 
+Note: it might be better to follow [this pattern](https://www.paulirish.com/2012/box-sizing-border-box-ftw/) for universal box sizing.
+
 Extend the [background property](https://www.w3schools.com/css/css_background.asp) to add a background color and image to the `<ul>`.
 
 ```css
@@ -302,7 +304,16 @@ Extend the [background property](https://www.w3schools.com/css/css_background.as
 }
 ```
 
-Aside: demo the background property using `img/pattern.gif`.
+Demo only (do not add this code) - the background property using `img/pattern.gif`.
+
+```css
+  background-image: url(../img/pattern.gif);
+  background-repeat: repeat-x;
+  background-position: 0 300px;
+  background-size: cover;
+```
+
+(See CSS Tricks for information on [`background-size: cover` and `contain`](https://css-tricks.com/almanac/properties/b/background-size/).)
 
 Add positioning to the background.
 
@@ -399,7 +410,7 @@ a:hover,
 }
 ```
 
-Now, if we add an id to the body tag we can edit the selector to make it page specific.
+Now, if we add a class to the body tag, we can edit the selector to make it page specific.
 
 Add `class="cuisines"` to the body tag.
 
