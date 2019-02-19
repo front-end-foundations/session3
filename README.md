@@ -77,32 +77,38 @@ $ python -m SimpleHTTPServer 9000
 
 Access `localhost:8000` in Chrome. Note the directory listing. `ctrl-c` to quit the process. -->
 
-## JavaScipt Review
+## Lecture - querySelector
 
-Recall `document.querySelector()` returns the first selected item.
+* `document.querySelector('<css-selector>')` returns the first found item.
 
-Navigate to this [Wikipedia](https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris) article. Inspect one of the listed boulevards to find `.mw-category` in the code.
+Navigate to this [Wikipedia](https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris) article. Inspect one of the listed boulevards and then find the div with the class `.mw-category` in the code view and click on it to select it.
 
-Paste the following in the console:
+`<div class="mw-category">`
+
+Now switch to the Console and paste the following:
 
 ```js
-var test = document.querySelector('a'); // returns the first anchor on the page
-var category = document.querySelector('.mw-category');
+var test = document.querySelector('a');
 ```
 
-While `document.querySelectorAll()` returns a collection (`nodeList`) of the items on the page:
+This returns only the first anchor on the page.
+
+* `document.querySelectorAll()` returns a collection (`nodeList`) of the items on the page:
 
 ```js
 var test = document.querySelectorAll('a');
 ```
 
-We can use our `category` variable as the basis for a more targeted query:
+We can use `mw-category` as a variable as the basis for a more targeted query:
 
 ```js
+var category = document.querySelector('.mw-category');
 var links = category.querySelectorAll('a');
 ```
 
 Examine the methods on the resulting nodeList. Try `links.length` in the console.
+
+`links.length`
 
 An array is a list of values that might look like this:
 
