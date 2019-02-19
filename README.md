@@ -163,6 +163,10 @@ Here's an alternate form of the same thing:
 var de = linkText.filter(streetName => streetName.includes('de'));
 ```
 
+## Continuation
+
+We will be finishing the Sushi review exercise from session 2 beginning [here](https://github.com/front-end-foundations/session2#creating-the-popover).
+
 ## Styling a List: Floats vs Flexbox
 
 <img src="other/tabs-image.jpg">
