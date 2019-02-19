@@ -1,5 +1,7 @@
 # III Floats and Flexbox
 
+Finished versions of all the exercises below are available on the [NYU Server](http://oit2.scps.nyu.edu/~devereld) in the [session3](http://oit2.scps.nyu.edu/~devereld/session3/) directory.
+
 ## Homework
 
 1. Complete last week's assignment - add a popover to a web page
@@ -7,20 +9,20 @@
 
 ## Midterm
 
-You have two week to complete this. The first stage - due in a week - is to write semantic HTML. The next will be to add CSS.
+You have three weeks to complete this. The first stage is to write semantic HTML. The next will be to add CSS.
 
-Files are located [here](https://github.com/front-end-foundations/midterm). The instructions are in the readme. Be sure to use `white-space: pre;` for the poetry where appropriate.
+Files and instructions are located [here](https://github.com/front-end-foundations/midterm). Be sure to use `white-space: pre;` for the poetry where appropriate.
 
 ## Reading
 
-* [What is Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
 * See how far you can get on [Flexbox Froggy](http://flexboxfroggy.com/)
-* Read (and Practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only, Windows users should use the copy of Git Bash that is installed along with [Git](https://git-scm.com/).)
+* [What is Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
+* Read (and practice) [Learning the Command Line](https://hellowebbooks.com/learn-command-line/). (Mac only.)
 
 ## Interesting
 
-* https://codepen.io/ivorjetski/pen/xMJoYO
-* https://codepen.io/jcoulterdesign/pen/KJBmEx
+* CSS [Glass with reflections](https://codepen.io/ivorjetski/pen/xMJoYO)
+* CSS [Hamburger mania](https://codepen.io/jcoulterdesign/pen/KJBmEx)
 
 <!-- ## Terminal
 
@@ -163,11 +165,11 @@ Here's an alternate form of the same thing:
 var de = linkText.filter(streetName => streetName.includes('de'));
 ```
 
-## Continuation
+## Sushi Continued
 
-We will be finishing the Sushi review exercise from session 2 beginning [here](https://github.com/front-end-foundations/session2#creating-the-popover).
+We will be finishing up the Sushi review exercise from session 2 beginning [here](https://github.com/front-end-foundations/session2#creating-the-popover).
 
-## Styling a List: Floats vs Flexbox
+## Styling Lists: Floats vs Flexbox
 
 <img src="other/tabs-image.jpg">
 
