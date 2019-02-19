@@ -79,6 +79,8 @@ Access `localhost:8000` in Chrome. Note the directory listing. `ctrl-c` to quit 
 
 ## Lecture - querySelector
 
+The following is adapted from the free [JavaScript30](https://javascript30.com) video series. Highly recommended.
+
 * `document.querySelector('<css-selector>')` returns the first found item.
 
 Navigate to this [Wikipedia](https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris) article. Inspect one of the listed boulevards and then find the div with the class `.mw-category` in the code view and click on it to select it.
