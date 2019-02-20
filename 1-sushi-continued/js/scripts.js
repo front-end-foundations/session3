@@ -1,9 +1,8 @@
-var mapClicker = document.querySelector('.map');
-var body = document.querySelector('body'); // NEW
+document.addEventListener('click', handleClicks);
 
-mapClicker.addEventListener('click', show);
-
-function show(e) {
-  body.classList.toggle('showme'); // NEW
-  e.preventDefault();
+function handleClicks(e) {
+  if (e.target.matches('.map') || e.target.matches('.closer')) {
+    document.querySelector('body').classList.toggle('showme');
+    e.preventDefault();
+  }
 }
